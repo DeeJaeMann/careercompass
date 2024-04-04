@@ -2,7 +2,7 @@
 
 ## Readme
 
-TODO: Add License to readme
+ - TODO: Add License to readme
 
 ## Planning
 
