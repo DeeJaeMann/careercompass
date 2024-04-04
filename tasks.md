@@ -6,7 +6,8 @@
 
 ## Planning
 
- - TODO: Interface diagram/sketch
  - TODO: Base framework
- - TODO: Documentation
-     - TODO: Source directories (expand on this)
+ - IN PROCESS: Documentation
+     - IN PROCESS: User Stories
+     - IN PROCESS: Design Diagram
+     - IN PROCESS: Interface diagram/sketch
