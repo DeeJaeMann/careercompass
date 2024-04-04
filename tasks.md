@@ -14,6 +14,12 @@
 ## Development
 
  - IN PROCESS: Base framework
-    - IN PROCESS: Django
-    - TODO: React
+    - IN PROCESS: Django Installations
+        - django
+        - psycopg[binary]
+        - djangorestframework
+        - django-cores-headers
+        - python-dotenv
+    - TODO: React Installations
     - DONE: Postgresql
+        - DB: careercompass_db
