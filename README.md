@@ -18,6 +18,5 @@ CRUD:
 Authentication:
  - Users must create and use their account in order to utilize the app features
 
-## [Task List](tasks.md)
+# [Task List](tasks.md)
 
-Testing
