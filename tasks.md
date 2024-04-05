@@ -21,5 +21,17 @@
         - django-cores-headers
         - python-dotenv
     - TODO: React Installations
+        - create vite project
+        - axios
+        - cypress
+        - react-router-dom
+        - tailwindcss
+        - postcss
+        - autoprefixer
+        - init tailwindcss
+        - tw-elements
+        - mdb-react-ui-kit
+        - fontawesome-free
+        - roboto font
     - DONE: Postgresql
         - DB: careercompass_db
