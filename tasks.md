@@ -20,6 +20,7 @@
         - djangorestframework
         - django-cores-headers
         - python-dotenv
+        - openai
     - IN PROCESS: React Installations
         - create vite project
         - axios
@@ -35,3 +36,7 @@
         - roboto font
     - DONE: Postgresql
         - DB: careercompass_db
+
+## Research
+
+ - TODO: HTTPOnly Cookie Auth
