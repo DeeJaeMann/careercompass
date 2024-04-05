@@ -1,0 +1,41 @@
+End Point:
+https://services.onetcenter.org/ws/mnm/careers/[O*NET-SOC Code]/skills
+
+Example:
+{
+   "code" : "39-9031.00",
+   "group" : [
+      {
+         "title" : {
+            "id" : "2.A",
+            "name" : "Basic Skills"
+         },
+         "element" : [
+            {
+               "id" : "2.A.1.d",
+               "name" : "talking to others"
+            },
+            {
+               "id" : "2.A.2.d",
+               "name" : "keeping track of how well people and/or groups are doing in order to make improvements"
+            }
+         ]
+      },
+      {
+         "title" : {
+            "id" : "2.B.1",
+            "name" : "Social"
+         },
+         "element" : [
+            {
+               "id" : "2.B.1.e",
+               "name" : "teaching people how to do something"
+            },
+            {
+               "id" : "2.B.1.f",
+               "name" : "looking for ways to help people"
+            }
+         ]
+      }
+   ]
+}

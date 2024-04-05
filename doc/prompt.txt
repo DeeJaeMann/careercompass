@@ -1,0 +1,28 @@
+Prompt:
+given these 3 interests: music, history, logic and these 3 hobbies: swimming, woodworking, reading.  generate 5 ocupations with the ONet job code that would match them.  the result should be in json format
+
+Example Result:
+{
+    "occupations": [
+        {
+            "occupation": "Musician or Singer",
+            "onet_code": "27-2042.02"
+        },
+        {
+            "occupation": "Historian",
+            "onet_code": "19-3093.00"
+        },
+        {
+            "occupation": "Philosophy and Religion Teachers, Postsecondary",
+            "onet_code": "25-1126.00"
+        },
+        {
+            "occupation": "Swimming Instructor",
+            "onet_code": "39-9031.00"
+        },
+        {
+            "occupation": "Woodworkers",
+            "onet_code": "51-7042.00"
+        }
+    ]
+}

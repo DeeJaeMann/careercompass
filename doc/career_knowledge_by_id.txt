@@ -1,0 +1,59 @@
+EndPoint:
+https://services.onetcenter.org/ws/mnm/careers/[O*NET-SOC Code]/knowledge
+Example:
+https://services.onetcenter.org/ws/mnm/careers/39-9031.00/knowledge
+
+Returns:
+{
+   "code" : "39-9031.00",
+   "group" : [
+      {
+         "title" : {
+            "id" : "2.C.1",
+            "name" : "Business"
+         },
+         "element" : [
+            {
+               "id" : "2.C.1.e",
+               "name" : "customer service"
+            }
+         ]
+      },
+      {
+         "title" : {
+            "id" : "2.C.7",
+            "name" : "Arts and Humanities"
+         },
+         "element" : [
+            {
+               "id" : "2.C.7.a",
+               "name" : "English language"
+            }
+         ]
+      },
+      {
+         "title" : {
+            "id" : "2.C.6",
+            "name" : "Education and Training"
+         },
+         "element" : [
+            {
+               "id" : "2.C.6",
+               "name" : "teaching and course design"
+            }
+         ]
+      },
+      {
+         "title" : {
+            "id" : "2.C.4",
+            "name" : "Math and Science"
+         },
+         "element" : [
+            {
+               "id" : "2.C.4.e",
+               "name" : "psychology"
+            }
+         ]
+      }
+   ]
+}

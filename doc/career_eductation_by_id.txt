@@ -1,0 +1,21 @@
+End Point:
+https://services.onetcenter.org/ws/mnm/careers/[O*NET-SOC Code]/education
+
+Example:
+https://services.onetcenter.org/ws/mnm/careers/39-9031.00/education
+
+Output:
+
+{
+   "code" : "39-9031.00",
+   "job_zone" : 3,
+   "education_usually_needed" : {
+      "category" : [
+         "certificate after high school",
+         "high school diploma/GED"
+      ]
+   },
+   "apprenticeships" : {
+      "title" : []
+   }
+}
