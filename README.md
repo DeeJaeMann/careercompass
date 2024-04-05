@@ -2,7 +2,7 @@
 
 # TODO: Format this better:
 
-## Pitch:
+## Overview:
 Many young adults aren't aware of the many possibile occupations they can pursue.  CareerCompass is a web application designed to assist with exploring potential career paths based on their interests and hobbies.  Users input their interests and hobbies and the app provides personalized career recommendations.  They may view short descriptions of each occupation and select the occupations which they would like to see additional details for.
 
 ## APIs:
