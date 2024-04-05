@@ -20,7 +20,7 @@
         - djangorestframework
         - django-cores-headers
         - python-dotenv
-    - TODO: React Installations
+    - IN PROCESS: React Installations
         - create vite project
         - axios
         - cypress
