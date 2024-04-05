@@ -1,4 +1,6 @@
 Prompt:
+
+Example:
 given these 3 interests: music, history, logic and these 3 hobbies: swimming, woodworking, reading.  generate 5 ocupations with the ONet job code that would match them.  the result should be in json format
 
 Example Result:
