@@ -43,7 +43,7 @@ class SignUp(APIView):
             new_user.is_superuser = False
             new_user.save()
             return Response(
-                {"user":new_user.username, "token":token.key}, 
+                {"username":new_user.username, "token":token.key}, 
                 status=HTTP_201_CREATED
                 )
         
