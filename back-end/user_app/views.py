@@ -48,3 +48,21 @@ class SignUp(APIView):
                 )
         
         return Response(credentials.message_dict, status=HTTP_400_BAD_REQUEST)
+    
+class LogIn(APIView):
+
+    def post(self, request):
+
+        data = request.data.copy()
+
+        data['username'] = request.data.get("email")
+
+        this_user = authenticate(username=data.get("username"), password=data.get("password"))
+
+        if this_user:
+
+            token, _ = Token.objects.get_or_create(user=this_user)
+            login(request, this_user)
+            return Response({"username":this_user.username, "token":token.key})
+        
+        return Response("Username or password incorrrect", status=HTTP_400_BAD_REQUEST)
