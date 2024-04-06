@@ -30,7 +30,7 @@ def create_user(request):
     except ValidationError as error:
         return error
     
-def SignUp(APIView):
+class SignUp(APIView):
     
     def post(self, request):
         credentials = create_user(request)
