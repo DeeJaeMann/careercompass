@@ -1,0 +1,14 @@
+User: me@here.com login.
+2024-04-07 22:15:44,011 django_info  INFO     User: me@here.com login.
+2024-04-07 23:05:24,098 django_info  INFO     User: me@here.com login.
+2024-04-07 23:06:45,553 django_info  INFO     User: me@here.com login.
+2024-04-07 23:07:11,598 django_info  INFO     User: None logout.  Token deleted.
+2024-04-07 23:07:47,328 django_info  INFO     User: me@here.com login.
+2024-04-07 23:08:11,189 django_info  INFO     User: me@here.com logout.  Token deleted.
+2024-04-07 23:30:54,095 django_info  INFO     User: me@here.com created.
+2024-04-07 23:30:54,206 django_info  INFO     User: me@here.com created.
+2024-04-07 23:30:54,314 django_info  INFO     User: me@here.com login.
+2024-04-07 23:30:54,421 django_info  INFO     User: me@here.com created.
+2024-04-07 23:30:54,633 django_info  INFO     User: me@here.com created.
+2024-04-07 23:30:54,740 django_info  INFO     User: me@here.com login.
+2024-04-07 23:30:54,742 django_info  INFO     User: None logout.  Token deleted.

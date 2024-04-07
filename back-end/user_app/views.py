@@ -1,3 +1,4 @@
+import logging
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
 from django.contrib.auth import authenticate, login, logout
@@ -12,6 +13,10 @@ from rest_framework.status import (
     HTTP_400_BAD_REQUEST
 )
 from .models import CCUser
+
+# logger = logging.getLogger(__name__)
+logger = logging.getLogger("django_info")
+logger.setLevel(logging.INFO)
 
 # Create your views here.
 
@@ -54,6 +59,8 @@ class SignUp(APIView):
             new_user.is_staff = False
             new_user.is_superuser = False
             new_user.save()
+            logger.info(f"User: {new_user.username} created.")
+
             return Response(
                 {"username":new_user.username, "token":token.key}, 
                 status=HTTP_201_CREATED
@@ -78,6 +85,7 @@ class LogIn(APIView):
 
             token, _ = Token.objects.get_or_create(user=this_user)
             login(request, this_user)
+            logger.info(f"User: {this_user.username} login.")
             return Response({"username":this_user.username, "token":token.key})
         
         return Response("Username or password incorrect", status=HTTP_400_BAD_REQUEST)
@@ -89,5 +97,6 @@ class LogOut(TokenReq):
 
     def post(self, request):
         request.user.auth_token.delete()
+        logger.info(f"User: {request.data.get('email')} logout.  Token deleted.")
         logout(request)
         return Response(status=HTTP_204_NO_CONTENT)
