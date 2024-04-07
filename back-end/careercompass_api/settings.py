@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 from dotenv import dotenv_values
 
@@ -137,3 +138,63 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Specify user model
 AUTH_USER_MODEL = "user_app.CCUser"
+
+# Logging configuration
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "django_debug": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": f"{BASE_DIR}/log/debug.log",
+        },
+        "django_info": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": f"{BASE_DIR}/log/info.log",
+        },
+        "django_warn": {
+            "level": "WARNING",
+            "class": "logging.FileHandler",
+            "filename": f"{BASE_DIR}/log/warn.log",
+        },
+        "django_error": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": f"{BASE_DIR}/log/error.log",
+        },
+        "django_crit": {
+            "level": "CRITICAL",
+            "class": "logging.FileHandler",
+            "filename": f"{BASE_DIR}/log/crit.log",
+        },
+    },
+    "loggers": {
+        "django_debug": {
+            "handlers": ["django_debug"],
+            "level": "DEBUG",
+            "propegate": True,
+        },
+        "django_info": {
+            "handlers": ["django_info"],
+            "level": "INFO",
+            "propegate": True,
+        },
+        "django_warn": {
+            "handlers": ["django_warn"],
+            "level": "WARNING",
+            "propegate": True,
+        },
+        "django_error": {
+            "handlers": ["django_error"],
+            "level": "ERROR",
+            "propegate": True,
+        },
+        "django_crit": {
+            "handlers": ["django_crit"],
+            "level": "CRITICAL",
+            "propegate": True,
+        },
+    },
+}
