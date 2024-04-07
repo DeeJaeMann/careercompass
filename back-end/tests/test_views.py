@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-import re
+from rest_framework.authtoken.models import Token
+import json
 
 class TestCCUserView(TestCase):
 
@@ -97,3 +98,28 @@ class TestCCUserView(TestCase):
         self.assertRegex(
             response.content, rb"(?:U|username)+.*(?:P|password)+.*(?:I|incorrect)+"
         )
+
+    def test_007_user_logout(self):
+        """
+        This test will sign up a new user, log them in and attempt to log them out with credentials provided
+        """
+        client = Client()
+
+        # Sign up for account
+        client.post(
+            reverse("sign-up"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        login_response = client.post(
+            reverse("login"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        response_body = json.loads(login_response.content)
+        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+        response = self.auth_client.post(reverse("logout"))
+        with self.subTest():
+            tokens = Token.objects.all()
+            self.assertEqual(len(tokens), 0)
+        self.assertEqual(response.status_code, 204)
