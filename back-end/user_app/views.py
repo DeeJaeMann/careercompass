@@ -65,4 +65,4 @@ class LogIn(APIView):
             login(request, this_user)
             return Response({"username":this_user.username, "token":token.key})
         
-        return Response("Username or password incorrrect", status=HTTP_400_BAD_REQUEST)
+        return Response("Username or password incorrect", status=HTTP_400_BAD_REQUEST)

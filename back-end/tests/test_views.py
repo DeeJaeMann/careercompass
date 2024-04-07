@@ -2,8 +2,6 @@ from django.test import TestCase, Client
 from django.urls import reverse
 import re
 
-#TODO: Refactor this to use RegEx in string responses
-
 class TestCCUserView(TestCase):
 
     tst_email = "me@here.com"
@@ -39,7 +37,10 @@ class TestCCUserView(TestCase):
         client = Client()
         response = client.post(
             reverse("sign-up"),
-            data={"email":"me", "password":self.tst_pass},
+            data={
+                "email":"me", 
+                "password":self.tst_pass
+                },
             content_type=self.app_con,
         )
         with self.subTest():
@@ -68,4 +69,31 @@ class TestCCUserView(TestCase):
             self.assertEqual(response.status_code, 200)
         self.assertRegex(
             response.data['username'], self.tst_email
+        )
+
+    def test_006_user_login_incorrect_password(self):
+        """
+        This test will sign up a new user and attemt to login given the incorrect credentials
+        """
+
+        client = Client()
+        # Sign up for account
+        client.post(
+            reverse("sign-up"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        response = client.post(
+            reverse("login"),
+            data={
+                "email":self.tst_email, 
+                "password":"incorrect",
+                },
+            content_type=self.app_con,
+        )
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 400)
+        self.assertRegex(
+            response.content, rb"(?:U|username)+.*(?:P|password)+.*(?:I|incorrect)+"
         )
