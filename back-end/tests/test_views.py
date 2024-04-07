@@ -4,6 +4,9 @@ from rest_framework.authtoken.models import Token
 import json
 
 class TestCCUserView(TestCase):
+    """
+    CCUser View Tests
+    """
 
     tst_email = "me@here.com"
     tst_pass = "1234"
