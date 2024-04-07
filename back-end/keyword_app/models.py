@@ -12,4 +12,4 @@ class Keyword(models.Model):
 
     # Ensure duplicate keywords don't exist for user
     class Meta:
-        unique_together = {'name', 'user',}
+        unique_together = ('name', 'user')
