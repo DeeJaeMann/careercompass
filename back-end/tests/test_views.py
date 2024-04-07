@@ -117,8 +117,8 @@ class TestCCUserView(TestCase):
             content_type=self.app_con,
         )
         response_body = json.loads(login_response.content)
-        self.client.credentials(HTTP_AUTHORIZATION=f"Token {response_body['token']}")
-        response = self.client.post(reverse("logout"))
+        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+        response = self.auth_client.post(reverse("logout"))
         with self.subTest():
             tokens = Token.objects.all()
             self.assertEqual(len(tokens), 0)
