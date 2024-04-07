@@ -12,3 +12,4 @@ User: me@here.com login.
 2024-04-07 23:30:54,633 django_info  INFO     User: me@here.com created.
 2024-04-07 23:30:54,740 django_info  INFO     User: me@here.com login.
 2024-04-07 23:30:54,742 django_info  INFO     User: None logout.  Token deleted.
+2024-04-07 23:51:51,334 django_info  INFO     User: me@here.com login.

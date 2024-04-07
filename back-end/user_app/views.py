@@ -1,5 +1,4 @@
 import logging
-from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.views import APIView
@@ -10,11 +9,10 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.status import (
     HTTP_201_CREATED,
     HTTP_204_NO_CONTENT,
-    HTTP_400_BAD_REQUEST
+    HTTP_400_BAD_REQUEST,
 )
 from .models import CCUser
 
-# logger = logging.getLogger(__name__)
 logger = logging.getLogger("django_info")
 logger.setLevel(logging.INFO)
 
