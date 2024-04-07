@@ -19,5 +19,4 @@ About ONet:  O*NET Web Services provides easy access to occupational data and ca
 ## Authentication:
  - Users must create and use their account in order to utilize the app features
 
-### [Task List](tasks.md)
 
