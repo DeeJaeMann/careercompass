@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-from django.core import validators as v
 from user_app.models import CCUser
 from .validators import validate_category, validate_name
 
