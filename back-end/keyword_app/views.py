@@ -60,9 +60,7 @@ class KeywordAllInfo(TokenReq):
     """
     def get(self, request):
         this_user = get_object_or_404(CCUser, id=request.user.id)
-
         keywords = Keyword.objects.filter(user=this_user)
-
         ser_keywords = KeywordSerializer(keywords, many=True)
-
+        info_logger.info(f"Keywords accessed (All User: {this_user}): {ser_keywords.data}")
         return Response(ser_keywords.data)

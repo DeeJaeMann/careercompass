@@ -837,3 +837,5 @@
 2024-04-08 16:23:05,864 django_info  INFO     User: me@here.com login.
 2024-04-08 16:47:46,337 django_info  INFO     User: me@here.com login.
 2024-04-08 16:48:58,352 django_info  INFO     User: me@here.com login.
+2024-04-08 16:52:50,775 django_info  INFO     Keywords accessed (All User): [{'id': 1, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-08T00:13:52.162340Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-08T01:19:08.807781Z', 'user': 1}]
+2024-04-08 16:53:40,821 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 1, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-08T00:13:52.162340Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-08T01:19:08.807781Z', 'user': 1}]
