@@ -133,3 +133,43 @@
 2024-04-08 16:20:36,659 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
 2024-04-08 16:20:36,880 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
 2024-04-08 16:20:37,105 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:08:18,471 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:08:19,784 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:08:20,002 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:08:20,221 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:09:00,247 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:09:01,539 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:09:01,754 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:09:01,971 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:09:28,253 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:09:29,561 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:09:29,774 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:09:29,991 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:14:00,573 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:14:01,870 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:14:02,081 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:14:02,298 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:14:42,065 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:14:43,353 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:14:43,564 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:14:43,780 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:15:06,021 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:15:07,342 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:15:07,563 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:15:07,787 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:15:48,584 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:15:49,891 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:15:50,112 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:15:50,334 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:16:17,601 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:16:18,921 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:16:19,135 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:16:19,349 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:16:59,385 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:17:00,686 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:17:00,900 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:17:01,119 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}
+2024-04-08 17:20:07,794 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-08 17:20:09,196 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 12}
+2024-04-08 17:20:09,422 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 13}
+2024-04-08 17:20:09,667 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 14}

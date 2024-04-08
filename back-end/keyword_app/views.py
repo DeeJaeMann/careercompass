@@ -53,3 +53,14 @@ class KeywordInfo(TokenReq):
         
         warn_logger.warning(f"Keyword access failed: User: {this_user} attempted to access Keyword ID: {this_keyword.id} Name: {this_keyword.name}")
         return Response(f"Keyword ID: {this_keyword.id} Name: {this_keyword.name} does not belong to user {this_user}", status=HTTP_403_FORBIDDEN)
+    
+class KeywordAllInfo(TokenReq):
+    """
+    View to get all user's keywords
+    """
+    def get(self, request):
+        this_user = get_object_or_404(CCUser, id=request.user.id)
+        keywords = Keyword.objects.filter(user=this_user)
+        ser_keywords = KeywordSerializer(keywords, many=True)
+        info_logger.info(f"Keywords accessed (All User: {this_user}): {ser_keywords.data}")
+        return Response(ser_keywords.data)

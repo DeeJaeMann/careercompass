@@ -303,7 +303,6 @@ class TestKeywordView(TestCase):
         This test attemtps to access a keyword that does not belong to the same user
         """
 
-
         self.keyword_additional_setup()
 
         # self.keyword_additional_setup()
@@ -325,11 +324,48 @@ class TestKeywordView(TestCase):
         This test will attempt to access a keyword without credentials
         """
 
-        # Keyword IDs are now 10 and 11
         self.keyword_additional_setup()
 
         client = Client()
         response = client.get(
             reverse("get-keyword", args=[10])
         )
+        self.assertEqual(response.status_code, 401)
+
+    def test_019_access_all_user_keywords(self):
+        """
+        This test will attempt to access all keywords for the logged in user
+        """
+
+        self.keyword_additional_setup()
+
+        new_keyword = Keyword.objects.create(
+            category=self.tst_category,
+            name="music",
+            user=self.ccuser_one
+        )
+
+        new_keyword.full_clean()
+        new_keyword.save()
+
+        this_auth_client = self.auth_client
+
+        response = this_auth_client.get(reverse("user-keywords"))
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 200)
+        # Compile the variables specified earlier into a bytes pattern
+        key_one_pattern = re.compile(rb'"name":"'+self.tst_name.encode()+b'"')
+        key_two_pattern = re.compile(rb'"name":"'+new_keyword.name.encode()+b'"')
+        self.assertRegex(response.content, key_one_pattern)
+        self.assertRegex(response.content, key_two_pattern)
+
+    def test_020_access_all_user_keywords_no_credentials(self):
+        """
+        This test will attempt to access the keywords endpoint without credentials
+        """
+        self.keyword_additional_setup()
+
+        client = Client()
+        response = client.get(reverse("user-keywords"))
         self.assertEqual(response.status_code, 401)
