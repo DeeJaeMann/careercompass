@@ -120,6 +120,9 @@ class TestOccupation(TestCase):
         )
     
     def test_021_occupation_with_proper_fields(self):
+        """
+        This test will attempt to create an occupation with the correct fields
+        """
         ccuser = CCUser.objects.get(username="me@here.com")
 
         new_occupation = Occupation.objects.create(
@@ -132,6 +135,9 @@ class TestOccupation(TestCase):
         self.assertIsNotNone(new_occupation)
 
     def test_022_occupation_with_incorrect_onet_code(self):
+        """
+        This test will attempt to create an occupation with the incorrect onet_code
+        """
         ccuser = CCUser.objects.get(username="me@here.com")
 
         try:
