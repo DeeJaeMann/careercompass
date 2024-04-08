@@ -126,3 +126,121 @@ class TestCCUserView(TestCase):
             tokens = Token.objects.all()
             self.assertEqual(len(tokens), 0)
         self.assertEqual(response.status_code, 204)
+
+class TestKeywordView(TestCase):
+    """
+    Keyword View Tests
+    """
+    tst_email = "me@here.com"
+    tst_pass = "1234"
+
+    app_con = "application/json"
+
+    good_usr_data = {
+        "email":tst_email,
+        "password":tst_pass,
+    }
+
+    tst_category = "interest"
+    tst_name = "history"
+
+    good_cat_data = {
+        "category":tst_category,
+        "name":tst_name,
+    }
+
+    def test_011_create_keyword_without_credentials(self):
+        """
+        This test will attempt to create a keyword without credentials
+        """
+        client = Client()
+        response = client.post(
+            reverse("create-keyword"),
+            data=self.good_cat_data,
+            content_type=self.app_con
+        )
+        self.assertEqual(response.status_code, 401)
+    
+    def setUp(self):
+        """
+        Keywords require a user to be authenticated
+        """
+        client = Client()
+
+        client.post(
+            reverse("sign-up"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        login_response = client.post(
+            reverse("login"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        response_body = json.loads(login_response.content)
+        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+
+    def test_012_create_keyword_with_credentials(self):
+        """
+        This test will attempt to create a keyword with credentials
+        """
+        response = self.auth_client.post(
+            reverse("create-keyword"),
+            data=self.good_cat_data,
+            content_type=self.app_con,
+            )
+        
+        with self.subTest():
+            self.assertEqual(response.status_code, 201)
+        self.assertRegex(response.content, rb"history")
+        self.assertRegex(response.content, rb"interest")
+
+    def test_013_create_keyword_with_incorrect_category(self):
+        """
+        This test will attempt to create a keyword with the incorrect category
+        """
+        response = self.auth_client.post(
+            reverse("create-keyword"),
+            data={
+                "category":"bad",
+                "name":self.tst_name
+            },
+            content_type=self.app_con
+        )
+        with self.subTest():
+            self.assertEqual(response.status_code, 400)
+        self.assertRegex(response.content, rb"Category")
+
+    def test_014_create_keyword_with_incorrect_name(self):
+        """
+        This test will attempt to create a keyword with the incorrect name
+        """
+        response = self.auth_client.post(
+            reverse("create-keyword"),
+            data={
+                "category":self.tst_category,
+                "name":"1234"
+            },
+            content_type=self.app_con
+        )
+        with self.subTest():
+            self.assertEqual(response.status_code, 400)
+        self.assertRegex(response.content, rb"Name")
+
+    def test_015_create_duplicate_keyword(self):
+        """
+        This test will attempt to create a duplicate keyword
+        """
+        self.auth_client.post(
+            reverse("create-keyword"),
+            data=self.good_cat_data,
+            content_type=self.app_con
+        )
+        response = self.auth_client.post(
+            reverse("create-keyword"),
+            data=self.good_cat_data,
+            content_type=self.app_con
+        )
+        with self.subTest():
+            self.assertEqual(response.status_code, 400)
+        self.assertRegex(response.content, rb"unique set")

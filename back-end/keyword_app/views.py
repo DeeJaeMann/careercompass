@@ -1,5 +1,4 @@
-import logging
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.status import (
     HTTP_201_CREATED,
@@ -7,10 +6,8 @@ from rest_framework.status import (
     HTTP_400_BAD_REQUEST,
 )
 from user_app.views import TokenReq, CCUser
-from .models import Keyword
-
-logger = logging.getLogger("django_info")
-logger.setLevel(logging.INFO)
+from .serializers import KeywordSerializer, Keyword
+from lib.logger import info_logger, error_logger
 
 # Create your views here.
 
@@ -22,9 +19,15 @@ class CreateKeyword(TokenReq):
     def post(self, request):
 
         data = request.data.copy()
-        username = data.get("email")
-        this_user = CCUser.objects.get(username=username)
+        this_user = get_object_or_404(CCUser, id=request.user.id)
+        data['user'] = this_user.id
 
-        # print(f"User identified: {this_user.username}")
+        new_keyword = KeywordSerializer(data=data)
 
-        return Response("Ok")
+        if new_keyword.is_valid():
+            new_keyword.save()
+            info_logger.info(f"Keyword ID: {new_keyword.data.get('id')} created by User: {this_user.get_username()}")
+            return Response(new_keyword.data, status=HTTP_201_CREATED)
+        
+        error_logger.error(f"CreateKeyword: {new_keyword.errors} Value: {data}")
+        return Response(new_keyword.errors, status=HTTP_400_BAD_REQUEST)

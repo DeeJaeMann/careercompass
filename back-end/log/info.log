@@ -1,15 +1,19 @@
-User: me@here.com login.
-2024-04-07 22:15:44,011 django_info  INFO     User: me@here.com login.
-2024-04-07 23:05:24,098 django_info  INFO     User: me@here.com login.
-2024-04-07 23:06:45,553 django_info  INFO     User: me@here.com login.
-2024-04-07 23:07:11,598 django_info  INFO     User: None logout.  Token deleted.
-2024-04-07 23:07:47,328 django_info  INFO     User: me@here.com login.
-2024-04-07 23:08:11,189 django_info  INFO     User: me@here.com logout.  Token deleted.
-2024-04-07 23:30:54,095 django_info  INFO     User: me@here.com created.
-2024-04-07 23:30:54,206 django_info  INFO     User: me@here.com created.
-2024-04-07 23:30:54,314 django_info  INFO     User: me@here.com login.
-2024-04-07 23:30:54,421 django_info  INFO     User: me@here.com created.
-2024-04-07 23:30:54,633 django_info  INFO     User: me@here.com created.
-2024-04-07 23:30:54,740 django_info  INFO     User: me@here.com login.
-2024-04-07 23:30:54,742 django_info  INFO     User: None logout.  Token deleted.
-2024-04-07 23:51:51,334 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:53,113 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:53,223 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:53,331 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:53,441 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:53,661 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:53,770 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:53,773 django_info  INFO     User: None logout.  Token deleted.
+2024-04-08 01:46:53,882 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:53,996 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:54,109 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:54,219 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:54,223 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-08 01:46:54,332 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:54,445 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:54,553 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:54,661 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:54,769 django_info  INFO     User: me@here.com created.
+2024-04-08 01:46:54,875 django_info  INFO     User: me@here.com login.
+2024-04-08 01:46:54,877 django_info  INFO     Keyword ID: 5 created by User: me@here.com
