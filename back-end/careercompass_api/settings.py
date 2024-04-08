@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "user_app",
     "keyword_app",
+    "openai_app",
 ]
 
 MIDDLEWARE = [

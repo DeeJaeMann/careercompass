@@ -332,3 +332,5 @@
 2024-04-08 17:20:09,195 django_warn  WARNING  Keyword: Category validation failed: bad
 2024-04-08 17:20:09,421 django_warn  WARNING  Keyword: Name validation failed: 1234
 2024-04-08 17:20:10,142 django_warn  WARNING  Keyword access failed: User: me@here.com attempted to access Keyword ID: 9 Name: history
+2024-04-08 19:11:35,922 django_warn  WARNING  Occupation: Onet Code validation failed: bad code
+2024-04-08 19:15:19,759 django_warn  WARNING  Occupation: Onet Code validation failed: bad code

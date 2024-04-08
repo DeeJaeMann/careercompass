@@ -2,9 +2,10 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DataError
 from keyword_app.models import Keyword, CCUser
+from openai_app.models import Occupation
 
 
-# Part I: User Model
+
 class TestCCUser(TestCase) :
     """
     CCUser Model Tests
@@ -102,3 +103,51 @@ class TestKeyword(TestCase):
             self.fail()
         except ValidationError as error:
             self.assertTrue("name" in error.message_dict)
+
+# Part 3: Occupation Model
+class TestOccupation(TestCase):
+    """
+    Occupation Model Tests
+    """
+    def setUp(self):
+        """
+        Occupation require a user to be created
+        """
+        CCUser.objects.create(
+            email="me@here.com",
+            username="me@here.com",
+            password="1234",
+        )
+    
+    def test_021_occupation_with_proper_fields(self):
+        """
+        This test will attempt to create an occupation with the correct fields
+        """
+        ccuser = CCUser.objects.get(username="me@here.com")
+
+        new_occupation = Occupation.objects.create(
+            name="Musician or Singer",
+            onet_code="27-2042.02",
+            user=ccuser,
+        )
+
+        new_occupation.full_clean()
+        self.assertIsNotNone(new_occupation)
+
+    def test_022_occupation_with_incorrect_onet_code(self):
+        """
+        This test will attempt to create an occupation with the incorrect onet_code
+        """
+        ccuser = CCUser.objects.get(username="me@here.com")
+
+        try:
+            new_occupation = Occupation.objects.create(
+                name="Musician or Singer",
+                onet_code="bad code",
+                user=ccuser,
+            )
+
+            new_occupation.full_clean()
+            self.fail()
+        except ValidationError as error:
+            self.assertTrue("onet_code" in error.message_dict)
