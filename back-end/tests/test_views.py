@@ -1,7 +1,9 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from rest_framework.authtoken.models import Token
+from keyword_app.models import Keyword, CCUser
 import json
+import re
 
 class TestCCUserView(TestCase):
     """
@@ -199,7 +201,8 @@ class TestKeywordView(TestCase):
         """
         This test will attempt to create a keyword with the incorrect category
         """
-        response = self.auth_client.post(
+        this_auth_client = self.auth_client
+        response = this_auth_client.post(
             reverse("create-keyword"),
             data={
                 "category":"bad",
@@ -215,7 +218,8 @@ class TestKeywordView(TestCase):
         """
         This test will attempt to create a keyword with the incorrect name
         """
-        response = self.auth_client.post(
+        this_auth_client = self.auth_client
+        response = this_auth_client.post(
             reverse("create-keyword"),
             data={
                 "category":self.tst_category,
@@ -231,12 +235,13 @@ class TestKeywordView(TestCase):
         """
         This test will attempt to create a duplicate keyword
         """
-        self.auth_client.post(
+        this_auth_client = self.auth_client
+        this_auth_client.post(
             reverse("create-keyword"),
             data=self.good_cat_data,
             content_type=self.app_con
         )
-        response = self.auth_client.post(
+        response = this_auth_client.post(
             reverse("create-keyword"),
             data=self.good_cat_data,
             content_type=self.app_con
@@ -244,3 +249,87 @@ class TestKeywordView(TestCase):
         with self.subTest():
             self.assertEqual(response.status_code, 400)
         self.assertRegex(response.content, rb"unique set")
+
+    def keyword_additional_setup(self):
+        """
+        This is to create an additional user and two keywords
+        One keyword is assigned per user
+        """
+
+        self.ccuser_one = CCUser.objects.get(username=self.tst_email)
+
+        self.ccuser_two = CCUser.objects.create(
+            email="you@here.com",
+            username="you@here.com",
+            password="1234",
+        )
+        self.ccuser_two.full_clean()
+        self.ccuser_two.save()
+
+        self.keyword_one = Keyword.objects.create(
+            category=self.tst_category,
+            name=self.tst_name,
+            user=self.ccuser_one,
+        )
+        self.keyword_one.full_clean()
+        self.keyword_one.save()
+
+        self.keyword_two = Keyword.objects.create(
+            category=self.tst_category,
+            name=self.tst_name,
+            user=self.ccuser_two,
+        )
+        self.keyword_two.full_clean()
+        self.keyword_two.save()
+
+    def test_016_user_access_keyword(self):
+        """
+        This test attempts to access a keyword which belongs to the same user
+        """
+
+        self.keyword_additional_setup()
+
+        this_auth_client = self.auth_client
+        response = this_auth_client.get(
+            reverse("get-keyword", args=[self.keyword_one.id])
+        )
+        # print(f"response: {response.content}")
+        with self.subTest():
+            self.assertEqual(response.status_code, 200)
+        self.assertRegex(response.content, rb'"name":"history"')
+
+    def test_017_user_access_other_user_keyword(self):
+        """
+        This test attemtps to access a keyword that does not belong to the same user
+        """
+
+
+        self.keyword_additional_setup()
+
+        # self.keyword_additional_setup()
+        this_auth_client = self.auth_client
+        response = this_auth_client.get(
+            reverse("get-keyword", args=[self.keyword_two.id])
+        )
+        # print(f"Response {response.content}")
+        # print(f"Keywords {Keyword.objects.order_by('id')}")
+        
+        with self.subTest():
+            self.assertEqual(response.status_code, 403)
+        # The keyword needs to be converted to a string and encoded to concat to the binary string RegEx pattern
+        id_pattern = re.compile(rb"ID: " + str(self.keyword_two.id).encode())
+        self.assertRegex(response.content, id_pattern)
+
+    def test_018_access_keyword_without_credentials(self):
+        """
+        This test will attempt to access a keyword without credentials
+        """
+
+        # Keyword IDs are now 10 and 11
+        self.keyword_additional_setup()
+
+        client = Client()
+        response = client.get(
+            reverse("get-keyword", args=[10])
+        )
+        self.assertEqual(response.status_code, 401)

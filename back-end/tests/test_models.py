@@ -1,8 +1,7 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DataError
-from user_app.models import CCUser
-from keyword_app.models import Keyword
+from keyword_app.models import Keyword, CCUser
 
 
 # Part I: User Model
