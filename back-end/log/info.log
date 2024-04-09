@@ -1153,3 +1153,291 @@
 2024-04-09 18:30:25,728 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Historian', 'onet_code': '19-3093.00', 'user': 1}, {'name': 'Musician or Singer', 'onet_code': '27-2042.02', 'user': 1}, {'name': 'Computer and Information Research Scientist', 'onet_code': '15-1111.00', 'user': 1}, {'name': 'Aquatic Biologist', 'onet_code': '19-1023.00', 'user': 1}, {'name': 'Cabinetmaker', 'onet_code': '51-7011.00', 'user': 1}]
 2024-04-09 18:30:47,307 django_info  INFO     Occupation: User: me@here.com deleted occupations
 2024-04-09 18:30:54,960 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Historian', 'onet_code': '19-3093.00', 'user': 1}, {'name': 'Musician', 'onet_code': '27-2042.02', 'user': 1}, {'name': 'Database Administrator', 'onet_code': '15-1141.00', 'user': 1}, {'name': 'Aquatic Biologist', 'onet_code': '19-1023.00', 'user': 1}, {'name': 'Carpenter', 'onet_code': '47-2031.00', 'user': 1}]
+2024-04-09 18:55:43,342 django_info  INFO     User: me@here.com created.
+2024-04-09 18:55:43,451 django_info  INFO     User: me@here.com login.
+2024-04-09 18:55:46,656 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician', 'onet_code': '27-2042.01', 'user': 2}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 2}, {'name': 'Computer Programmer', 'onet_code': '15-1251.00', 'user': 2}, {'name': 'Swim Instructor', 'onet_code': '39-9031.00', 'user': 2}, {'name': 'Carpenter', 'onet_code': '47-2031.01', 'user': 2}]
+2024-04-09 18:56:23,771 django_info  INFO     User: me@here.com created.
+2024-04-09 18:56:23,877 django_info  INFO     User: me@here.com login.
+2024-04-09 18:56:27,093 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician or Singer', 'onet_code': '27-2042.02', 'user': 2}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 2}, {'name': 'Logistician', 'onet_code': '13-1081.00', 'user': 2}, {'name': 'Recreation and Fitness Studies Teacher, Postsecondary', 'onet_code': '25-1193.00', 'user': 2}, {'name': 'Carpenter', 'onet_code': '47-2031.01', 'user': 2}]
+2024-04-09 18:56:50,531 django_info  INFO     User: me@here.com created.
+2024-04-09 18:56:50,643 django_info  INFO     User: me@here.com login.
+2024-04-09 18:56:55,181 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Composer', 'onet_code': '27-2041.04', 'user': 2}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 2}, {'name': 'Software Developer', 'onet_code': '15-1132.00', 'user': 2}, {'name': 'Swimming Instructor', 'onet_code': '39-9031.00', 'user': 2}, {'name': 'Carpenter', 'onet_code': '47-2031.00', 'user': 2}]
+2024-04-09 18:57:16,887 django_info  INFO     User: me@here.com created.
+2024-04-09 18:57:16,993 django_info  INFO     User: me@here.com login.
+2024-04-09 18:57:20,260 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician', 'onet_code': '27-2042.02', 'user': 2}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 2}, {'name': 'Research Analyst', 'onet_code': '13-2081.00', 'user': 2}, {'name': 'Swim Instructor', 'onet_code': '39-9031.00', 'user': 2}, {'name': 'Woodworker', 'onet_code': '51-7040.00', 'user': 2}]
+2024-04-09 18:57:41,213 django_info  INFO     User: me@here.com created.
+2024-04-09 18:57:41,319 django_info  INFO     User: me@here.com login.
+2024-04-09 18:57:46,783 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician or Singer', 'onet_code': '27-2042.02', 'user': 1}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 1}, {'name': 'Computer Systems Analyst', 'onet_code': '15-1121.00', 'user': 1}, {'name': 'Carpenter', 'onet_code': '47-2031.00', 'user': 1}, {'name': 'Librarian', 'onet_code': '25-4021.00', 'user': 1}]
+2024-04-09 18:58:12,101 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:12,212 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:12,321 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:12,430 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:12,643 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:12,750 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:12,753 django_info  INFO     User: None logout.  Token deleted.
+2024-04-09 18:58:12,868 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:12,983 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:13,100 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:13,207 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:13,209 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-09 18:58:13,316 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:13,424 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:13,532 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:13,639 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:13,747 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:13,856 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:13,858 django_info  INFO     Keyword ID: 5 created by User: me@here.com
+2024-04-09 18:58:13,967 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:14,073 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:14,078 django_info  INFO     Keyword accessed: ID: 6 Name: history
+2024-04-09 18:58:14,182 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:14,289 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:14,403 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:14,510 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:14,618 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:14,724 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:14,729 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 12, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-09T18:58:14.725911Z', 'user': 23}, {'id': 14, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-09T18:58:14.727278Z', 'user': 23}]
+2024-04-09 18:58:14,835 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:14,943 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:15,055 django_info  INFO     User: me@here.com created.
+2024-04-09 18:58:15,164 django_info  INFO     User: me@here.com login.
+2024-04-09 18:58:18,551 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Teacher', 'onet_code': '25-1121.00', 'user': 27}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 27}, {'name': 'Programming Logic Developer', 'onet_code': '15-1211.00', 'user': 27}, {'name': 'Swim Instructor', 'onet_code': '39-9031.00', 'user': 27}, {'name': 'Woodworker', 'onet_code': '51-7042.00', 'user': 27}]
+2024-04-09 19:00:37,920 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:38,031 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:38,144 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:38,256 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:38,471 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:38,581 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:38,584 django_info  INFO     User: None logout.  Token deleted.
+2024-04-09 19:00:38,695 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:38,803 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:38,910 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:39,015 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:39,018 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-09 19:00:39,124 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:39,230 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:39,338 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:39,445 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:39,553 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:39,659 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:39,661 django_info  INFO     Keyword ID: 5 created by User: me@here.com
+2024-04-09 19:00:39,768 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:39,874 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:39,878 django_info  INFO     Keyword accessed: ID: 6 Name: history
+2024-04-09 19:00:39,984 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:40,090 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:40,201 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:40,308 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:40,418 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:40,526 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:40,530 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 12, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-09T19:00:40.527602Z', 'user': 23}, {'id': 14, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-09T19:00:40.528946Z', 'user': 23}]
+2024-04-09 19:00:40,636 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:40,742 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:40,854 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:40,960 django_info  INFO     User: me@here.com login.
+2024-04-09 19:00:44,942 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Director', 'onet_code': '27-2041.01', 'user': 27}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 27}, {'name': 'Mathematician', 'onet_code': '15-2021.00', 'user': 27}, {'name': 'Aquatics Director', 'onet_code': '39-9032.00', 'user': 27}, {'name': 'Carpenter', 'onet_code': '47-2031.00', 'user': 27}]
+2024-04-09 19:00:45,056 django_info  INFO     User: me@here.com created.
+2024-04-09 19:00:45,162 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:52,512 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:52,620 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:52,726 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:52,833 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:53,047 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:53,154 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:53,156 django_info  INFO     User: None logout.  Token deleted.
+2024-04-09 19:03:53,266 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:53,373 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:53,483 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:53,590 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:53,592 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-09 19:03:53,698 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:53,805 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:53,914 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:54,021 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:54,130 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:54,238 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:54,240 django_info  INFO     Keyword ID: 5 created by User: me@here.com
+2024-04-09 19:03:54,348 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:54,455 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:54,460 django_info  INFO     Keyword accessed: ID: 6 Name: history
+2024-04-09 19:03:54,566 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:54,674 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:54,785 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:54,892 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:55,001 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:55,108 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:55,113 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 12, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-09T19:03:55.110268Z', 'user': 23}, {'id': 14, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-09T19:03:55.111630Z', 'user': 23}]
+2024-04-09 19:03:55,220 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:55,325 django_info  INFO     User: me@here.com login.
+2024-04-09 19:03:55,438 django_info  INFO     User: me@here.com created.
+2024-04-09 19:03:55,545 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:00,456 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician', 'onet_code': '27-2042.01', 'user': 27}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 27}, {'name': 'Mathematician', 'onet_code': '15-2021.00', 'user': 27}, {'name': 'Swim Instructor', 'onet_code': '39-9031.00', 'user': 27}, {'name': 'Carpenter', 'onet_code': '47-2031.00', 'user': 27}]
+2024-04-09 19:04:00,576 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:00,682 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:00,792 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:00,898 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:12,928 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:13,036 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:13,143 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:13,248 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:13,459 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:13,567 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:13,569 django_info  INFO     User: None logout.  Token deleted.
+2024-04-09 19:04:13,678 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:13,785 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:13,894 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:14,001 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:14,004 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-09 19:04:14,109 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:14,216 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:14,324 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:14,430 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:14,538 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:14,644 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:14,646 django_info  INFO     Keyword ID: 5 created by User: me@here.com
+2024-04-09 19:04:14,753 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:14,859 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:14,864 django_info  INFO     Keyword accessed: ID: 6 Name: history
+2024-04-09 19:04:14,969 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:15,075 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:15,185 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:15,291 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:15,401 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:15,507 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:15,511 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 12, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-09T19:04:15.508545Z', 'user': 23}, {'id': 14, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-09T19:04:15.509901Z', 'user': 23}]
+2024-04-09 19:04:15,616 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:15,722 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:15,833 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:15,939 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:20,079 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician', 'onet_code': '27-2042.02', 'user': 27}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 27}, {'name': 'Computer Systems Analyst', 'onet_code': '15-1121.00', 'user': 27}, {'name': 'Swimming Instructor', 'onet_code': '39-9031.00', 'user': 27}, {'name': 'Furniture Finisher', 'onet_code': '51-7011.00', 'user': 27}]
+2024-04-09 19:04:20,199 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:20,305 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:20,415 django_info  INFO     User: me@here.com created.
+2024-04-09 19:04:20,521 django_info  INFO     User: me@here.com login.
+2024-04-09 19:04:25,086 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Composer', 'onet_code': '27-2041.01', 'user': 29}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 29}, {'name': 'Mathematician', 'onet_code': '15-2021.00', 'user': 29}, {'name': 'Swimming Instructor', 'onet_code': '39-9031.00', 'user': 29}, {'name': 'Carpenter', 'onet_code': '47-2031.00', 'user': 29}]
+2024-04-09 19:07:33,748 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:33,860 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:33,973 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:34,081 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:34,297 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:34,404 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:34,407 django_info  INFO     User: None logout.  Token deleted.
+2024-04-09 19:07:34,519 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:34,630 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:34,738 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:34,846 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:34,850 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-09 19:07:34,956 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:35,061 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:35,169 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:35,275 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:35,383 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:35,489 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:35,491 django_info  INFO     Keyword ID: 5 created by User: me@here.com
+2024-04-09 19:07:35,600 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:35,706 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:35,710 django_info  INFO     Keyword accessed: ID: 6 Name: history
+2024-04-09 19:07:35,817 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:35,925 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:36,036 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:36,144 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:36,254 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:36,360 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:36,365 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 12, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-09T19:07:36.362423Z', 'user': 23}, {'id': 14, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-09T19:07:36.363769Z', 'user': 23}]
+2024-04-09 19:07:36,471 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:36,577 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:36,690 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:36,796 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:40,768 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Teacher', 'onet_code': '25-1121.00', 'user': 27}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 27}, {'name': 'Music Composer', 'onet_code': '27-2041.01', 'user': 27}, {'name': 'Swim Instructor', 'onet_code': '39-9031.00', 'user': 27}, {'name': 'Carpenter', 'onet_code': '47-2031.00', 'user': 27}]
+2024-04-09 19:07:40,876 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:40,982 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:41,094 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:41,201 django_info  INFO     User: me@here.com login.
+2024-04-09 19:07:47,092 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician', 'onet_code': '27-2042.02', 'user': 29}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 29}, {'name': 'Philosopher', 'onet_code': '25-1126.00', 'user': 29}, {'name': 'Swim Instructor', 'onet_code': '39-9031.00', 'user': 29}, {'name': 'Woodworker', 'onet_code': '51-7042.00', 'user': 29}]
+2024-04-09 19:07:47,536 django_info  INFO     User: me@here.com created.
+2024-04-09 19:07:47,643 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:24,211 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:24,323 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:24,431 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:24,537 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:24,750 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:24,859 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:24,862 django_info  INFO     User: None logout.  Token deleted.
+2024-04-09 19:08:24,975 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:25,086 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:25,195 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:25,306 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:25,310 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-09 19:08:25,416 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:25,526 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:25,634 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:25,741 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:25,849 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:25,957 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:25,959 django_info  INFO     Keyword ID: 5 created by User: me@here.com
+2024-04-09 19:08:26,067 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:26,173 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:26,178 django_info  INFO     Keyword accessed: ID: 6 Name: history
+2024-04-09 19:08:26,285 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:26,391 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:26,501 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:26,608 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:26,719 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:26,828 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:26,833 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 12, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-09T19:08:26.830131Z', 'user': 23}, {'id': 14, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-09T19:08:26.831482Z', 'user': 23}]
+2024-04-09 19:08:26,940 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:27,048 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:27,158 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:27,264 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:31,755 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Director', 'onet_code': '27-2041.01', 'user': 27}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 27}, {'name': 'Computer Systems Analyst', 'onet_code': '15-1121.00', 'user': 27}, {'name': 'Swimming Instructor', 'onet_code': '39-9031.00', 'user': 27}, {'name': 'Carpenter', 'onet_code': '47-2031.01', 'user': 27}]
+2024-04-09 19:08:31,863 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:31,970 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:32,082 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:32,190 django_info  INFO     User: me@here.com login.
+2024-04-09 19:08:37,292 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Composer', 'onet_code': '27-2041.01', 'user': 29}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 29}, {'name': 'Software Developer', 'onet_code': '15-1132.00', 'user': 29}, {'name': 'Swimming Instructor', 'onet_code': '39-9031.00', 'user': 29}, {'name': 'Woodworker', 'onet_code': '51-7040.00', 'user': 29}]
+2024-04-09 19:08:39,350 django_info  INFO     User: me@here.com created.
+2024-04-09 19:08:39,459 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:03,149 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:03,259 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:03,368 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:03,476 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:03,693 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:03,801 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:03,803 django_info  INFO     User: None logout.  Token deleted.
+2024-04-09 19:16:03,919 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:04,029 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:04,144 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:04,252 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:04,256 django_info  INFO     Keyword ID: 4 created by User: me@here.com
+2024-04-09 19:16:04,367 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:04,477 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:04,591 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:04,702 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:04,813 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:04,920 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:04,923 django_info  INFO     Keyword ID: 5 created by User: me@here.com
+2024-04-09 19:16:05,031 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:05,138 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:05,142 django_info  INFO     Keyword accessed: ID: 6 Name: history
+2024-04-09 19:16:05,247 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:05,353 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:05,465 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:05,572 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:05,683 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:05,791 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:05,796 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 12, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-09T19:16:05.792720Z', 'user': 23}, {'id': 14, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-09T19:16:05.794091Z', 'user': 23}]
+2024-04-09 19:16:05,902 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:06,008 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:06,121 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:06,228 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:09,616 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician', 'onet_code': '27-2042.02', 'user': 27}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 27}, {'name': 'Psychologist', 'onet_code': '19-3031.02', 'user': 27}, {'name': 'Swim Instructor', 'onet_code': '39-9031.00', 'user': 27}, {'name': 'Woodworker', 'onet_code': '51-7041.00', 'user': 27}]
+2024-04-09 19:16:09,736 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:09,844 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:09,959 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:10,066 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:14,288 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Musician or Singer', 'onet_code': '27-2042.02', 'user': 29}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 29}, {'name': 'Database Administrator', 'onet_code': '15-1141.00', 'user': 29}, {'name': 'Swimming Instructor', 'onet_code': '39-9031.00', 'user': 29}, {'name': 'Carpenter', 'onet_code': '47-2031.01', 'user': 29}]
+2024-04-09 19:16:14,771 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:14,879 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:15,491 django_info  INFO     User: me@here.com created.
+2024-04-09 19:16:15,598 django_info  INFO     User: me@here.com login.
+2024-04-09 19:16:15,605 django_info  INFO     Occupation: User: me@here.com deleted occupations

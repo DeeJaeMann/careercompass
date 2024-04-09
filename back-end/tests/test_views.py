@@ -371,4 +371,142 @@ class TestKeywordView(TestCase):
         self.assertEqual(response.status_code, 401)
 
 class TestOccupationView(TestCase):
-    pass
+    """
+    Occupation view tests
+    """
+    tst_email = "me@here.com"
+    tst_pass = "1234"
+
+    app_con = "application/json"
+
+    good_usr_data = {
+        "email":tst_email,
+        "password":tst_pass,
+        }
+
+    def setUp(self):
+        """
+        Occupations require a user to be authenticated
+        """
+        client = Client()
+
+        client.post(
+            reverse("sign-up"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        login_response = client.post(
+            reverse("login"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        response_body = json.loads(login_response.content)
+        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+
+    def setup_keywords(self):
+        ccuser = CCUser.objects.get(username=self.tst_email)
+
+        interest_one = Keyword.objects.create(
+            category="interest",
+            name="music",
+            user=ccuser,
+        )
+        interest_one.full_clean()
+        interest_one.save()
+
+        interest_two = Keyword.objects.create(
+            category="interest",
+            name="history",
+            user=ccuser,
+        )
+        interest_two.full_clean()
+        interest_two.save()
+
+        interest_three = Keyword.objects.create(
+            category="interest",
+            name="logic",
+            user=ccuser,
+        )
+        interest_three.full_clean()
+        interest_three.save()
+
+        hobby_one = Keyword.objects.create(
+            category="hobby",
+            name="swimming",
+            user=ccuser,
+        )
+        hobby_one.full_clean()
+        hobby_one.save()
+
+        hobby_two = Keyword.objects.create(
+            category="hobby",
+            name="woodworking",
+            user=ccuser,
+        )
+        hobby_two.full_clean()
+        hobby_two.save()
+
+        hobby_three = Keyword.objects.create(
+            category="hobby",
+            name="reading",
+            user=ccuser,
+        )
+        hobby_three.full_clean()
+        hobby_three.save()
+
+    def test_023_access_occupations(self):
+        """
+        This test attempts to access all occupations for the authenticated user
+        """
+        self.setup_keywords()
+
+        this_auth_client = self.auth_client
+
+        response = this_auth_client.get(reverse("get-occupations"))
+        self.assertEqual(response.status_code, 201)
+    
+    def test_024_access_occupations_no_credentials(self):
+        """
+        This test attempts to access all occupations endpoint without credentials
+        """
+        self.setup_keywords()
+
+        client = Client()
+        response = client.get(reverse("get-occupations"))
+        self.assertEqual(response.status_code, 401)
+
+    def test_025_access_stored_occupations(self):
+        """
+        This test attempts to access occupations stored in the DB.  Occupations are stored on first request, so this makes two requests
+        """
+        self.setup_keywords()
+
+        this_auth_client = self.auth_client
+
+        this_auth_client.get(reverse("get-occupations"))
+
+        response = this_auth_client.get(reverse("get-occupations"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_026_access_occupations_without_keywords(self):
+        """
+        This test attempts to access occupations without keywords in the DB
+        """
+        this_auth_client = self.auth_client
+
+        response = this_auth_client.get(reverse("get-occupations"))
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 400)
+        self.assertRegex(response.content, rb'keywords')
+
+    def test_027_delete_all_user_occupations(self):
+        """
+        This test attempts to delete all occupations registered to a user
+        """
+        this_auth_client = self.auth_client
+
+        self.setup_keywords()
+
+        response = this_auth_client.delete(reverse("get-occupations"))
+        self.assertEqual(response.status_code, 204)

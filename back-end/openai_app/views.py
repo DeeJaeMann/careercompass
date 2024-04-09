@@ -36,7 +36,7 @@ class OpenAIOccupation(TokenReq):
             # Ensure we have keywords in the DB
             if len(keywords) == 0:
                 error_logger.error(f"Occupation: User: {ccuser} referenced with no keywords defined")
-                return Response("You must have keywords defined", status_code= HTTP_400_BAD_REQUEST)
+                return Response("You must have keywords defined", status= HTTP_400_BAD_REQUEST)
 
             ser_keywords = KeywordSerializer(keywords, many=True)
 
