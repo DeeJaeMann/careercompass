@@ -1,5 +1,13 @@
-from openai import OpenAI
+from openai import OpenAI, AuthenticationError
 import json
+
+def openai_verify_key(api_key):
+    try:
+        client = OpenAI(api_key=api_key)
+        client.models.list()
+    except AuthenticationError:
+        return False
+    return True
 
 def openai_get_occupations(api_key):
 
