@@ -369,3 +369,6 @@ class TestKeywordView(TestCase):
         client = Client()
         response = client.get(reverse("user-keywords"))
         self.assertEqual(response.status_code, 401)
+
+class TestOccupationView(TestCase):
+    pass
