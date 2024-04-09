@@ -204,3 +204,4 @@
 2024-04-09 19:16:04,704 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 15}
 2024-04-09 19:16:04,924 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 16}
 2024-04-09 19:16:15,369 django_error ERROR    Occupation: User: me@here.com referenced with no keywords defined
+2024-04-09 19:22:57,343 django_error ERROR    Occupation: User: me@here.com referenced with no keywords defined

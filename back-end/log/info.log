@@ -1441,3 +1441,16 @@
 2024-04-09 19:16:15,491 django_info  INFO     User: me@here.com created.
 2024-04-09 19:16:15,598 django_info  INFO     User: me@here.com login.
 2024-04-09 19:16:15,605 django_info  INFO     Occupation: User: me@here.com deleted occupations
+2024-04-09 19:20:41,505 django_info  INFO     User: me@here.com created.
+2024-04-09 19:20:41,614 django_info  INFO     User: me@here.com login.
+2024-04-09 19:20:46,298 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Historian', 'onet_code': '27-2041.03', 'user': 1}, {'name': 'Music Librarian', 'onet_code': '25-1999.00', 'user': 1}, {'name': 'Historical Researcher', 'onet_code': '19-3093.00', 'user': 1}, {'name': 'Woodworking Craftsperson', 'onet_code': '51-7042.00', 'user': 1}, {'name': 'Swimming Coach', 'onet_code': '27-2021.00', 'user': 1}]
+2024-04-09 19:21:34,883 django_info  INFO     User: me@here.com created.
+2024-04-09 19:21:34,991 django_info  INFO     User: me@here.com login.
+2024-04-09 19:22:16,162 django_info  INFO     User: me@here.com created.
+2024-04-09 19:22:16,272 django_info  INFO     User: me@here.com login.
+2024-04-09 19:22:21,396 django_info  INFO     Occupations: Created for user me@here.com - Data: [{'name': 'Music Historian', 'onet_code': '25-1123.00', 'user': 1}, {'name': 'Music Teacher', 'onet_code': '25-1121.00', 'user': 1}, {'name': 'Music Director', 'onet_code': '27-2041.04', 'user': 1}, {'name': 'Historian', 'onet_code': '19-3093.00', 'user': 1}, {'name': 'Logician', 'onet_code': '19-4021.00', 'user': 1}]
+2024-04-09 19:22:55,435 django_info  INFO     User: me@here.com created.
+2024-04-09 19:22:55,542 django_info  INFO     User: me@here.com login.
+2024-04-09 19:23:41,307 django_info  INFO     User: me@here.com created.
+2024-04-09 19:23:41,416 django_info  INFO     User: me@here.com login.
+2024-04-09 19:23:41,424 django_info  INFO     Occupation: User: me@here.com deleted occupations
