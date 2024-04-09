@@ -104,7 +104,6 @@ class TestKeyword(TestCase):
         except ValidationError as error:
             self.assertTrue("name" in error.message_dict)
 
-# Part 3: Occupation Model
 class TestOccupation(TestCase):
     """
     Occupation Model Tests
