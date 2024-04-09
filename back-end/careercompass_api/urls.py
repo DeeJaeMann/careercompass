@@ -24,4 +24,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path(f"{CC_BASE_URL}user/", include("user_app.urls")),
     path(f"{CC_BASE_URL}keyword/", include("keyword_app.urls")),
+    path(f"{CC_BASE_URL}occupation/", include("openai_app.urls")),
 ]
