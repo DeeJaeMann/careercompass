@@ -7,7 +7,7 @@ def openai_get_occupations(api_key):
     client = OpenAI(api_key=api_key)
 
     # Client configuration
-    prompt = "given these 3 interests: music, history, logic and these 3 hobbies: swimming, woodworking, reading.  generate 5 ocupations with the ONet job code that would match them.  the result should be in json format"
+    prompt = "given these 3 interests: music, history, logic and these 3 hobbies: swimming, woodworking, reading.  generate 5 ocupations with the ONet job code that would match them.  the result should be in json format.  the occupation name should be name and the job code should be onet_code"
     model="gpt-3.5-turbo"
 
     # Make the request
