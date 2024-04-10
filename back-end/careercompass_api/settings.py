@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "user_app",
     "keyword_app",
     "openai_app",
+    "onet_app",
 ]
 
 MIDDLEWARE = [

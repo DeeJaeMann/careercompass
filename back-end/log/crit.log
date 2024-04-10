@@ -1,5 +1,0 @@
-2024-04-09 16:51:26,801 django_crit  CRITICAL Configuration: No OpenAI Key provided
-2024-04-09 17:05:07,647 django_crit  CRITICAL Configuration: No OpenAI Key provided
-2024-04-09 17:05:20,601 django_crit  CRITICAL Configuration: No OpenAI Key provided
-2024-04-09 17:10:21,868 django_crit  CRITICAL Configuration: No OpenAI Key provided
-2024-04-09 17:10:45,439 django_crit  CRITICAL Configuration: Invalid OpenAI Key provided

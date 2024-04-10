@@ -2,14 +2,14 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DataError
 from keyword_app.models import Keyword, CCUser
-from openai_app.models import Occupation
+from onet_app.models import Occupation, Details
 
 
-
-class TestCCUser(TestCase) :
+class TestCCUser(TestCase):
     """
     CCUser Model Tests
     """
+
     def test_001_user_with_proper_email_field(self):
         """
         This test will create a user with proper fields
@@ -39,10 +39,12 @@ class TestCCUser(TestCase) :
         except ValidationError as error:
             self.assertTrue("email" in error.message_dict)
 
+
 class TestKeyword(TestCase):
     """
     Keyword Model Tests
     """
+
     def setUp(self):
         """
         Keywords require a user to be created
@@ -104,10 +106,12 @@ class TestKeyword(TestCase):
         except ValidationError as error:
             self.assertTrue("name" in error.message_dict)
 
+
 class TestOccupation(TestCase):
     """
     Occupation Model Tests
     """
+
     def setUp(self):
         """
         Occupation require a user to be created
@@ -117,7 +121,7 @@ class TestOccupation(TestCase):
             username="me@here.com",
             password="1234",
         )
-    
+
     def test_021_occupation_with_proper_fields(self):
         """
         This test will attempt to create an occupation with the correct fields
@@ -150,3 +154,60 @@ class TestOccupation(TestCase):
             self.fail()
         except ValidationError as error:
             self.assertTrue("onet_code" in error.message_dict)
+
+
+class TestDetails(TestCase):
+    """
+    Details Model Tests
+    """
+
+    def setUp(self):
+        """
+        Occupation require a user to be created
+        """
+        ccuser = CCUser.objects.create(
+            email="me@here.com",
+            username="me@here.com",
+            password="1234",
+        )
+        """
+        Details require an occupation to be created
+        """
+        self.job = Occupation.objects.create(
+            name="Swim Coach",
+            onet_code="27-2022.00",
+            user=ccuser,
+        )
+        self.onet_name = "Coaches & Scouts"
+        self.description = "Instruct or coach groups or individuals in the fundamentals of sports for the primary purpose of competition. Demonstrate techniques and methods of participation. May evaluate athletes' strengths and weaknesses as possible recruits or to improve the athletes' technique to prepare them for competition. Those required to hold teaching certifications should be reported in the appropriate teaching category."
+        self.tasks = {
+            "task": [
+                "Plan, organize, and conduct practice sessions.",
+                "Provide training direction, encouragement, motivation, and nutritional advice to prepare athletes for games, competitive events, or tours.",
+                "Adjust coaching techniques, based on the strengths and weaknesses of athletes."
+            ]
+        }
+        self.alt_names = {
+            "title": [
+                "Basketball Coach",
+                "Coach",
+                "Football Coach",
+                "Track and Field Coach"
+            ]
+        }
+
+    def test_028_details_with_proper_fields(self):
+        """
+        This test will attempt to create a new details model
+        """
+        
+        new_details = Details.objects.create(
+            onet_name=self.onet_name,
+            description=self.description,
+            tasks=self.tasks,
+            alt_names=self.alt_names,
+            occupation=self.job,
+        )
+
+        new_details.full_clean()
+        self.assertIsNotNone(new_details)
