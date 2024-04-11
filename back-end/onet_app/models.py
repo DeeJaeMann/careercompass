@@ -7,4 +7,9 @@ class Details(models.Model):
     description = models.CharField(blank=False, null=False)
     tasks = models.JSONField(default=dict)
     alt_names = models.JSONField(default=dict)
-    occupation = models.ForeignKey(Occupation, on_delete=models.CASCADE, related_name="details")
+    occupation = models.OneToOneField(Occupation, on_delete=models.CASCADE, related_name="details")
+
+class Knowledge(models.Model):
+    category = models.CharField(max_length=150)
+    description = models.CharField(max_length=150)
+    occupation = models.ForeignKey(Occupation, on_delete=models.CASCADE, related_name='knowledge')
