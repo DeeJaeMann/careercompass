@@ -13,7 +13,7 @@ from openai_app.serialzers import OccupationSerializer, Occupation
 from user_app.views import TokenReq, CCUser
 from keyword_app.serializers import Keyword, KeywordSerializer
 from lib.logger import info_logger, error_logger, crit_logger
-from lib.occupation import openai_get_occupations, openai_verify_key
+from lib.openai import openai_get_occupations, openai_verify_key
 from careercompass_api.settings import env
 
 # Create your views here.
@@ -65,6 +65,8 @@ class OpenAIOccupation(TokenReq):
                 if new_occupations.is_valid():
                     new_occupations.save()
                     info_logger.info(f"Occupations: Created for user {ccuser} - Data: {job_data}")
+                    # This is where we need to fire off the request to ONet for the occupation short desc
+                    # Once the response is received it should create a new entry in the DB - Details table
                     return Response(new_occupations.data, status=HTTP_201_CREATED)
                 
                 #TODO: Verify if this already solves the payment issue.  The error would be in .errors
