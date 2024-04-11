@@ -2,6 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from rest_framework.authtoken.models import Token
 from keyword_app.models import Keyword, CCUser
+from onet_app.models import Details, Occupation
 import json
 import re
 
@@ -508,5 +509,26 @@ class TestOccupationView(TestCase):
 
         self.setup_keywords()
 
+        this_auth_client.get(reverse("get-occupations"))
+
         response = this_auth_client.delete(reverse("get-occupations"))
-        self.assertEqual(response.status_code, 204)
+
+        occupations = Occupation.objects.all()
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 204)
+        self.assertEqual(len(occupations), 0)
+
+    def test_029_occupation_populates_details(self):
+        """
+        This test verifies that when occupations are created, details entries are created as well
+        """
+        this_auth_client = self.auth_client
+
+        self.setup_keywords()
+
+        this_auth_client.get(reverse("get-occupations"))
+
+        details = Details.objects.all()
+
+        self.assertNotEqual(len(details), 0)

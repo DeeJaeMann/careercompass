@@ -10,10 +10,12 @@ from rest_framework.status import (
 )
 
 from openai_app.serialzers import OccupationSerializer, Occupation
+from onet_app.serializers import DetailsSerializer, Details
 from user_app.views import TokenReq, CCUser
 from keyword_app.serializers import Keyword, KeywordSerializer
 from lib.logger import info_logger, error_logger, crit_logger
-from lib.occupation import openai_get_occupations, openai_verify_key
+from lib.openai import openai_get_occupations, openai_verify_key
+from lib.onet import OnetWebService
 from careercompass_api.settings import env
 
 # Create your views here.
@@ -65,6 +67,56 @@ class OpenAIOccupation(TokenReq):
                 if new_occupations.is_valid():
                     new_occupations.save()
                     info_logger.info(f"Occupations: Created for user {ccuser} - Data: {job_data}")
+
+                    onet_user = env.get('ONET_USERNAME')
+                    onet_pass = env.get('ONET_PASSWORD')
+
+                    # This is where we need to fire off the request to ONet for the occupation short desc
+
+                    #TODO: Add check to ensure the user and password are not default values and that they exist. If they do not we need to exit with a critical configuration error
+
+                    onet_client = OnetWebService(onet_user, onet_pass)
+
+                    # loop through each job to get the job details from the ONet API
+                    for job in job_data:
+                        this_occupation = Occupation.objects.get(onet_code=job['onet_code'])
+
+                        # This endpoint provides the occupation overview data
+                        # Example: https://services.onetcenter.org/ws/mnm/careers/39-9031.00/ 
+                        this_url = f'mnm/careers/{job["onet_code"]}'
+                        this_response = onet_client.call(this_url)
+
+                        # Fomat the response into data for the serializer
+                        if 'error' in this_response:
+                            # If we get an error in the response, we will add an error entry in the details record. This is also added to the error log
+                            error_logger.error(f"OnetWebService: Resource does not exist: {job['onet_code']} - {job['name']}")
+                            detail_data = {
+                                'onet_name':'Error',
+                                'description':'This resourse was not found. No additional details are available.',
+                                'occupation':this_occupation.id,
+                            }
+                        else:
+                            # Good data found
+                            detail_data = {
+                                'onet_name':this_response['title'],
+                                'description':this_response['what_they_do'],
+                                'tasks':this_response['on_the_job'],
+                                'alt_names':this_response['also_called'],
+                                'occupation':this_occupation.id,
+                            }
+                        
+                        ser_this_job = DetailsSerializer(data=detail_data)
+
+                        if ser_this_job.is_valid():
+                            ser_this_job.save()
+                            
+                            info_logger.info(f"Details: Added {ser_this_job.data}")
+                        else:
+                            # This should never execute
+                            crit_logger.critical(f"DetailsSerializer error: {ser_this_job}")                            
+
+                    # We only return the occupation data to the requester.  The details will be requested from a different endpoint.
+                    #TODO: Determine if this response should include both.  If so, the response for when data already exists in the db needs to be modified as well
                     return Response(new_occupations.data, status=HTTP_201_CREATED)
                 
                 #TODO: Verify if this already solves the payment issue.  The error would be in .errors
