@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DataError
 from keyword_app.models import Keyword, CCUser
-from onet_app.models import Occupation, Details, Knowledge
+from onet_app.models import Occupation, Details, Knowledge, Education
 
 
 class TestCCUser(TestCase):
@@ -225,3 +225,16 @@ class TestOnetModels(TestCase):
 
         new_knowledge.full_clean()
         self.assertIsNotNone(new_knowledge)
+
+    def test_032_eductation_with_proper_fields(self):
+        """
+        This test will attempt to create a new education model
+        """
+
+        new_education = Education.objects.create(
+            category="certificate after high school",
+            occupation=self.job,
+        )
+
+        new_education.full_clean()
+        self.assertIsNotNone(new_education)

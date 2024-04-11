@@ -13,3 +13,7 @@ class Knowledge(models.Model):
     category = models.CharField(max_length=150)
     description = models.CharField(max_length=150)
     occupation = models.ForeignKey(Occupation, on_delete=models.CASCADE, related_name='knowledge')
+
+class Education(models.Model):
+    category = models.CharField(max_length=150)
+    occupation = models.ForeignKey(Occupation, on_delete=models.CASCADE, related_name='education')
