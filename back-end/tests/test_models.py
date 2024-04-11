@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DataError
 from keyword_app.models import Keyword, CCUser
-from onet_app.models import Occupation, Details
+from onet_app.models import Occupation, Details, Knowledge
 
 
 class TestCCUser(TestCase):
@@ -156,9 +156,9 @@ class TestOccupation(TestCase):
             self.assertTrue("onet_code" in error.message_dict)
 
 
-class TestDetails(TestCase):
+class TestOnetModels(TestCase):
     """
-    Details Model Tests
+    ONet Model Tests
     """
 
     def setUp(self):
@@ -211,3 +211,17 @@ class TestDetails(TestCase):
 
         new_details.full_clean()
         self.assertIsNotNone(new_details)
+
+    def test_031_knowledge_with_proper_fields(self):
+        """
+        This test will attempt to create a new knowledge model
+        """
+
+        new_knowledge = Knowledge.objects.create(
+            category="Test category",
+            description="This is a test",
+            occupation=self.job,
+        )
+
+        new_knowledge.full_clean()
+        self.assertIsNotNone(new_knowledge)
