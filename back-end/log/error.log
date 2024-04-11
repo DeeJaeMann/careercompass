@@ -31,3 +31,4 @@
 2024-04-11 15:27:33,191 django_error ERROR    OnetWebService: Resource does not exist: 47-2031.01 - Carpenter
 2024-04-11 15:27:42,523 django_error ERROR    OnetWebService: Resource does not exist: 51-7040.00 - Woodworker
 2024-04-11 15:27:42,717 django_error ERROR    OnetWebService: Resource does not exist: 25-4021.00 - Librarian
+2024-04-11 16:01:52,105 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.01 - Musician
