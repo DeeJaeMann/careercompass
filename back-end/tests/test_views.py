@@ -294,7 +294,7 @@ class TestKeywordView(TestCase):
         response = this_auth_client.get(
             reverse("get-keyword", args=[self.keyword_one.id])
         )
-        # print(f"response: {response.content}")
+
         with self.subTest():
             self.assertEqual(response.status_code, 200)
         self.assertRegex(response.content, rb'"name":"history"')
@@ -306,13 +306,10 @@ class TestKeywordView(TestCase):
 
         self.keyword_additional_setup()
 
-        # self.keyword_additional_setup()
         this_auth_client = self.auth_client
         response = this_auth_client.get(
             reverse("get-keyword", args=[self.keyword_two.id])
         )
-        # print(f"Response {response.content}")
-        # print(f"Keywords {Keyword.objects.order_by('id')}")
         
         with self.subTest():
             self.assertEqual(response.status_code, 403)
@@ -532,3 +529,109 @@ class TestOccupationView(TestCase):
         details = Details.objects.all()
 
         self.assertNotEqual(len(details), 0)
+
+class TestDetailsView(TestCase):
+    """
+    Details view tests
+    """
+    tst_email = "me@here.com"
+    tst_pass = "1234"
+
+    app_con = "application/json"
+
+    good_usr_data = {
+        "email":tst_email,
+        "password":tst_pass,
+        }
+    
+    def setUp(self):
+        """
+        Details require:
+         - User to be created and authenticated
+         - Keywords populated
+         - Occupations populated
+        """
+        client = Client()
+
+        client.post(
+            reverse("sign-up"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        login_response = client.post(
+            reverse("login"),
+            data=self.good_usr_data,
+            content_type=self.app_con,
+        )
+        response_body = json.loads(login_response.content)
+        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+
+        ccuser = CCUser.objects.get(username=self.tst_email)
+
+        interest_one = Keyword.objects.create(
+            category="interest",
+            name="music",
+            user=ccuser,
+        )
+        interest_one.full_clean()
+        interest_one.save()
+
+        interest_two = Keyword.objects.create(
+            category="interest",
+            name="history",
+            user=ccuser,
+        )
+        interest_two.full_clean()
+        interest_two.save()
+
+        interest_three = Keyword.objects.create(
+            category="interest",
+            name="logic",
+            user=ccuser,
+        )
+        interest_three.full_clean()
+        interest_three.save()
+
+        hobby_one = Keyword.objects.create(
+            category="hobby",
+            name="swimming",
+            user=ccuser,
+        )
+        hobby_one.full_clean()
+        hobby_one.save()
+
+        hobby_two = Keyword.objects.create(
+            category="hobby",
+            name="woodworking",
+            user=ccuser,
+        )
+        hobby_two.full_clean()
+        hobby_two.save()
+
+        hobby_three = Keyword.objects.create(
+            category="hobby",
+            name="reading",
+            user=ccuser,
+        )
+        hobby_three.full_clean()
+        hobby_three.save()
+
+    def test_030_access_occupation_details(self):
+        """
+        This test attempts to access an occupations details by id.
+        """
+
+        this_auth_client = self.auth_client
+
+        this_auth_client.get(reverse("get-occupations"))
+
+        # print(occupations.content)
+        occupation = Occupation.objects.all().first()
+
+        response = this_auth_client.get(reverse("occupation-details",
+                                                args=[occupation.id]))
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 200)
+        occupation_pattern = re.compile(rb'"occupation":' + str(occupation.id).encode())
+        self.assertRegex(response.content, occupation_pattern)
