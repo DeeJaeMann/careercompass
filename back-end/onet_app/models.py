@@ -17,3 +17,8 @@ class Knowledge(models.Model):
 class Education(models.Model):
     category = models.CharField(max_length=150)
     occupation = models.ForeignKey(Occupation, on_delete=models.CASCADE, related_name='education')
+
+class Skills(models.Model):
+    category = models.CharField(max_length=150)
+    description = models.JSONField(default=dict)
+    occupation = models.ForeignKey(Occupation, on_delete=models.CASCADE, related_name="skills")

@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DataError
 from keyword_app.models import Keyword, CCUser
-from onet_app.models import Occupation, Details, Knowledge, Education
+from onet_app.models import Occupation, Details, Knowledge, Education, Skills
 
 
 class TestCCUser(TestCase):
@@ -238,3 +238,28 @@ class TestOnetModels(TestCase):
 
         new_education.full_clean()
         self.assertIsNotNone(new_education)
+
+    def test_033_skills_with_proper_fields(self):
+        """
+        This test will attempt to create a new skill model
+        """
+
+        new_skill = Skills.objects.create(
+            category="Basic Skills",
+            description={
+                "element": [
+                    {
+                        "id":"2.B.1.e",
+                        "name":"teaching people how to do something"
+                    },
+                    {
+                        "id":"2.B.1.f",
+                        "name":"looking for ways to help people"
+                    }
+                ]
+            },
+            occupation=self.job
+        )
+
+        new_skill.full_clean()
+        self.assertIsNotNone(new_skill)
