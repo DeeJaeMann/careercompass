@@ -15,7 +15,7 @@ class Details(models.Model):
 
 class Knowledge(models.Model):
     category = models.CharField(max_length=150)
-    description = models.CharField(max_length=150)
+    description = models.JSONField(default=dict)
     occupation = models.ForeignKey(
         Occupation, on_delete=models.CASCADE, related_name='knowledge')
 

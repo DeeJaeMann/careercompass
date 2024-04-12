@@ -218,8 +218,15 @@ class TestOnetModels(TestCase):
         """
 
         new_knowledge = Knowledge.objects.create(
-            category="Test category",
-            description="This is a test",
+            category="Math and Science",
+            description={
+                'element': [
+                    {
+                        'id':'2.C.4.e',
+                        'name':'psychology'
+                    }
+                ]
+            },
             occupation=self.job,
         )
 
