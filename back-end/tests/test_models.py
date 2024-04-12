@@ -200,7 +200,7 @@ class TestOnetModels(TestCase):
         """
         This test will attempt to create a new details model
         """
-        
+
         new_details = Details.objects.create(
             onet_name=self.onet_name,
             description=self.description,
@@ -249,12 +249,12 @@ class TestOnetModels(TestCase):
             description={
                 "element": [
                     {
-                        "id":"2.B.1.e",
-                        "name":"teaching people how to do something"
+                        "id": "2.B.1.e",
+                        "name": "teaching people how to do something"
                     },
                     {
-                        "id":"2.B.1.f",
-                        "name":"looking for ways to help people"
+                        "id": "2.B.1.f",
+                        "name": "looking for ways to help people"
                     }
                 ]
             },
