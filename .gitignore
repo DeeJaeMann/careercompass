@@ -1,4 +1,5 @@
 __pycache__
 node-modules
 .env
+*.code-workspace
 *.kate-swp
