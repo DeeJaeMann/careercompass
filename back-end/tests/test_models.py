@@ -239,7 +239,14 @@ class TestOnetModels(TestCase):
         """
 
         new_education = Education.objects.create(
-            category="certificate after high school",
+            description={
+                "education_usually_needed": {
+                    "category" : [
+                        "certificate after high school",
+                        "high school diploma/GED"
+                    ]
+                }
+            },
             occupation=self.job,
         )
 
