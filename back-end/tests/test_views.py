@@ -634,6 +634,7 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
+        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("occupation-details",
@@ -655,6 +656,7 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
+        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("get-knowledge",
@@ -666,3 +668,25 @@ class TestONetViews(TestCase):
             rb'"occupation":' + str(occupation.id).encode()
         )
         self.assertRegex(response.content, knowledge_pattern)
+
+    def test_035_access_occupation_education(self):
+        """
+        This test attempts to access an occupations education by id
+        """
+
+        this_auth_client = self.auth_client
+
+        this_auth_client.get(reverse("get-occupations"))
+
+        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
+        occupation = Occupation.objects.all().first()
+
+        response = this_auth_client.get(reverse("get-education",
+                                                args=[occupation.id]))
+        
+        with self.subTest():
+            self.assertEqual(response.status_code, 201)
+        education_pattern = re.compile(
+            rb'"occupation":' + str(occupation.id).encode()
+            )
+        self.assertRegex(response.content, education_pattern)

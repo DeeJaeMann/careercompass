@@ -131,8 +131,6 @@ class EducationInfo(TokenReq):
 
         education = Education.objects.filter(occupation=id)
 
-        print(f"\n*****\nGot education: {education}\n*****\n")
-
         if education.count() == 0:
             occupation = get_object_or_404(Occupation, id=id)
 
