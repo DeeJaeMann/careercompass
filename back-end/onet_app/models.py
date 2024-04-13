@@ -21,8 +21,8 @@ class Knowledge(models.Model):
 
 
 class Education(models.Model):
-    category = models.CharField(max_length=150)
-    occupation = models.ForeignKey(
+    description = models.JSONField(default=dict)
+    occupation = models.OneToOneField(
         Occupation, on_delete=models.CASCADE, related_name='education')
 
 

@@ -7,7 +7,14 @@ from rest_framework.status import (
 )
 from user_app.views import TokenReq, CCUser
 from openai_app.models import Occupation
-from .serializers import DetailsSerializer, Details, KnowledgeSerializer, Knowledge
+from .serializers import (
+    DetailsSerializer, 
+    Details, 
+    KnowledgeSerializer, 
+    Knowledge,
+    EducationSerializer,
+    Education
+)
 from lib.logger import info_logger, error_logger
 from lib.onet import OnetWebService
 from careercompass_api.settings import env
@@ -20,9 +27,6 @@ onet_pass = env.get('ONET_PASSWORD')
 onet_client = OnetWebService(onet_user, onet_pass)
 
 class DetailsInfo(TokenReq):
-    """
-    View to get details data
-    """
 
     def get(self, request, id):
         """
@@ -39,9 +43,6 @@ class DetailsInfo(TokenReq):
         return Response(ser_details.data)
 
 class KnowledgeInfo(TokenReq):
-    """
-    View to get knowledge data
-    """
 
     def get(self, request, id):
         """
@@ -53,6 +54,8 @@ class KnowledgeInfo(TokenReq):
 
         knowledge = Knowledge.objects.filter(occupation=id)
 
+        # Check if we have any records that match the occupation id,
+        # If not, we will make the API request to get records
         if knowledge.count() == 0:
             # No record exists, query ONet API
             occupation = get_object_or_404(Occupation, id=id)
@@ -99,13 +102,13 @@ class KnowledgeInfo(TokenReq):
                     }
                     knowledge_data.append(this_data)
 
-            new_knowledge = KnowledgeSerializer(data=knowledge_data, many=True)
+            ser_new_knowledge = KnowledgeSerializer(data=knowledge_data, many=True)
 
-            if new_knowledge.is_valid():
-                new_knowledge.save()
-                info_logger.info(f"Knowledge: User {ccuser} created for occupation ID: {occupation.id} - {new_knowledge.data}")
-                return Response(new_knowledge.data, status=HTTP_201_CREATED)
-            return Response(new_knowledge.errors, status=HTTP_400_BAD_REQUEST)
+            if ser_new_knowledge.is_valid():
+                ser_new_knowledge.save()
+                info_logger.info(f"Knowledge: User {ccuser} created for occupation ID: {occupation.id} - {ser_new_knowledge.data}")
+                return Response(ser_new_knowledge.data, status=HTTP_201_CREATED)
+            return Response(ser_new_knowledge.errors, status=HTTP_400_BAD_REQUEST)
 
         response = KnowledgeSerializer(knowledge, many=True)
 
@@ -115,8 +118,65 @@ class KnowledgeInfo(TokenReq):
         """
         Deletes all knowledge records with job id
         """
-        this_user = get_object_or_404(CCUser, id=request.user.id)
+        ccuser = get_object_or_404(CCUser, id=request.user.id)
 
         Knowledge.objects.filter(occupation=id).delete()
-        info_logger.info(f"Knowledge: User: {this_user} deleted knowledge for occupation id: {id}")
+        info_logger.info(f"Knowledge: User: {ccuser} deleted knowledge for occupation id: {id}")
+        return Response(status=HTTP_204_NO_CONTENT)
+    
+class EducationInfo(TokenReq):
+
+    def get(self, request, id):
+        ccuser = get_object_or_404(CCUser, id=request.user.id)
+
+        education = Education.objects.filter(occupation=id)
+
+        if education.count() == 0:
+            occupation = get_object_or_404(Occupation, id=id)
+
+            this_url = f'mnm/careers/{occupation.onet_code}/education'
+
+            response = onet_client.call(this_url)
+
+            description = {}
+
+            # The API will usually return either of the following keys in the response JSON
+            if 'apprenticeships' in response:
+                description['apprencticeships'] = response['apprenticeships']
+
+            if 'education_usually_needed' in response:
+                description['education_usually_needed'] = response['education_usually_needed']
+
+            if 'error' in response:
+                description['error'] = "This resource does not exist"
+                error_logger.error(f"OnetWebService: Resource does not exist: {occupation.onet_code} - {occupation.name}")
+
+            new_education = {
+                'occupation':occupation.id,
+                'description':description
+            }
+
+            ser_new_education = EducationSerializer(data=new_education)
+
+            if ser_new_education.is_valid():
+                ser_new_education.save()
+                info_logger.info(f"Education: User {ccuser} created for occupation ID: {occupation.id} - {ser_new_education.data}")
+                return Response(ser_new_education.data, status=HTTP_201_CREATED)
+
+            return Response(ser_new_education.errors, status=HTTP_400_BAD_REQUEST)
+        
+        # Count was used to determine if records exist, if they do, there
+        # will only be one, so reference the first of the query set
+        response = EducationSerializer(education.first())
+
+        return Response(response.data)
+    
+    def delete(self, request, id):
+        """
+        Deletes education record with job id
+        """
+        ccuser = get_object_or_404(CCUser, id=request.user.id)
+
+        Education.objects.get(occupation=id).delete()
+        info_logger.info(f"Education: User: {ccuser} deleted education for occupation id: {id}")
         return Response(status=HTTP_204_NO_CONTENT)
