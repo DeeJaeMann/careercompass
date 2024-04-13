@@ -533,9 +533,9 @@ class TestOccupationView(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        details = Details.objects.all()
+        details = Details.objects.all().count()
 
-        self.assertNotEqual(len(details), 0)
+        self.assertNotEqual(details, 0)
 
 
 class TestONetViews(TestCase):

@@ -106,3 +106,29 @@
 2024-04-13 21:16:27,546 django_error ERROR    OnetWebService: Resource does not exist: 27-2041.01 - Music Composer
 2024-04-13 21:16:27,900 django_error ERROR    OnetWebService: Resource does not exist: 51-7040.00 - Woodworker
 2024-04-13 21:16:28,105 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
+2024-04-13 21:34:44,484 django_error ERROR    SignUp: {'email': ['Enter a valid email address.', 'Email: Must be correct format user@domain.(com,edu,org,net)']}
+2024-04-13 21:34:45,764 django_error ERROR    CreateKeyword: {'category': [ErrorDetail(string='Category:  Must be either interest or hobby', code='invalid')]} Value: {'category': 'bad', 'name': 'history', 'user': 18}
+2024-04-13 21:34:45,978 django_error ERROR    CreateKeyword: {'name': [ErrorDetail(string='Name: Must be one word', code='invalid')]} Value: {'category': 'interest', 'name': '1234', 'user': 19}
+2024-04-13 21:34:46,193 django_error ERROR    CreateKeyword: {'non_field_errors': [ErrorDetail(string='The fields name, user must make a unique set.', code='unique')]} Value: {'category': 'interest', 'name': 'history', 'user': 20}
+2024-04-13 21:34:51,732 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
+2024-04-13 21:34:52,151 django_error ERROR    OnetWebService: Resource does not exist: 27-2041.04 - Music Director
+2024-04-13 21:34:52,343 django_error ERROR    OnetWebService: Resource does not exist: 51-7040.00 - Woodworker
+2024-04-13 21:34:52,544 django_error ERROR    OnetWebService: Resource does not exist: 25-4021.00 - Librarian
+2024-04-13 21:34:55,137 django_error ERROR    OnetWebService: Resource does not exist: 27-2041.03 - Music Composer
+2024-04-13 21:34:55,521 django_error ERROR    OnetWebService: Resource does not exist: 15-1121.00 - Computer Systems Analyst
+2024-04-13 21:34:56,008 django_error ERROR    OnetWebService: Resource does not exist: 47-2031.01 - Carpenter
+2024-04-13 21:34:56,205 django_error ERROR    OnetWebService: Resource does not exist: 27-2041.03 - Music Composer
+2024-04-13 21:34:59,240 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician or Singer
+2024-04-13 21:34:59,792 django_error ERROR    OnetWebService: Resource does not exist: 15-1121.00 - Computer Systems Analyst
+2024-04-13 21:35:00,399 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician or Singer
+2024-04-13 21:35:03,670 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
+2024-04-13 21:35:04,029 django_error ERROR    OnetWebService: Resource does not exist: 15-1121.00 - Computer Systems Analyst
+2024-04-13 21:35:04,375 django_error ERROR    OnetWebService: Resource does not exist: 51-7040.00 - Woodworker
+2024-04-13 21:35:04,573 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
+2024-04-13 21:35:07,617 django_error ERROR    OnetWebService: Resource does not exist: 15-1131.00 - Computer Programmer
+2024-04-13 21:35:11,057 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
+2024-04-13 21:35:12,619 django_error ERROR    Occupation: User: me@here.com referenced with no keywords defined
+2024-04-13 21:35:15,420 django_error ERROR    OnetWebService: Resource does not exist: 27-2041.01 - Music Composer
+2024-04-13 21:35:16,370 django_error ERROR    OnetWebService: Resource does not exist: 47-2031.01 - Carpenter
+2024-04-13 21:35:19,060 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
+2024-04-13 21:35:19,464 django_error ERROR    OnetWebService: Resource does not exist: 15-2091.00 - Data Analyst
