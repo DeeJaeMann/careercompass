@@ -517,11 +517,11 @@ class TestOccupationView(TestCase):
 
         response = this_auth_client.delete(reverse("get-occupations"))
 
-        occupations = Occupation.objects.all()
+        occupations = Occupation.objects.all().count()
 
         with self.subTest():
             self.assertEqual(response.status_code, 204)
-        self.assertEqual(len(occupations), 0)
+        self.assertEqual(occupations, 0)
 
     def test_029_occupation_populates_details(self):
         """
