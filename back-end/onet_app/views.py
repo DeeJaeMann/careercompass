@@ -194,9 +194,7 @@ class SkillsInfo(TokenReq):
         if skills.count() == 0:
 
             occupation = get_object_or_404(Occupation, id=id)
-
             this_url = f'mnm/careers/{occupation.onet_code}/skills'
-
             response = onet_client.call(this_url)
 
             skills_data = []
@@ -217,6 +215,7 @@ class SkillsInfo(TokenReq):
                     'occupation':occupation.id
                 }
                 skills_data.append(this_data)
+
             else:
                 
                 group = response['group']
