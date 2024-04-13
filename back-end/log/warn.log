@@ -70,3 +70,30 @@
 2024-04-12 19:33:25,727 django_warn  WARNING  Keyword: Category validation failed: bad
 2024-04-12 19:33:25,945 django_warn  WARNING  Keyword: Name validation failed: 1234
 2024-04-12 19:33:26,599 django_warn  WARNING  Keyword access failed: User: me@here.com attempted to access Keyword ID: 15 Name: history
+2024-04-12 20:30:55,798 django_warn  WARNING  User: Email validation failed: me
+2024-04-12 20:30:55,803 django_warn  WARNING  Keyword: Category validation failed: bad
+2024-04-12 20:30:55,804 django_warn  WARNING  Keyword: Name validation failed: 1234
+2024-04-12 20:30:55,809 django_warn  WARNING  Occupation: Onet Code validation failed: bad code
+2024-04-12 20:30:55,941 django_warn  WARNING  User: Email validation failed: me
+2024-04-12 20:30:56,369 django_warn  WARNING  User Login Failed: me@here.com
+2024-04-12 20:30:57,261 django_warn  WARNING  Keyword: Category validation failed: bad
+2024-04-12 20:30:57,491 django_warn  WARNING  Keyword: Name validation failed: 1234
+2024-04-12 20:30:58,152 django_warn  WARNING  Keyword access failed: User: me@here.com attempted to access Keyword ID: 9 Name: history
+2024-04-12 20:31:54,092 django_warn  WARNING  User: Email validation failed: me
+2024-04-12 20:31:54,096 django_warn  WARNING  Keyword: Category validation failed: bad
+2024-04-12 20:31:54,098 django_warn  WARNING  Keyword: Name validation failed: 1234
+2024-04-12 20:31:54,104 django_warn  WARNING  Occupation: Onet Code validation failed: bad code
+2024-04-12 20:31:54,259 django_warn  WARNING  User: Email validation failed: me
+2024-04-12 20:31:54,686 django_warn  WARNING  User Login Failed: me@here.com
+2024-04-12 20:31:55,550 django_warn  WARNING  Keyword: Category validation failed: bad
+2024-04-12 20:31:55,765 django_warn  WARNING  Keyword: Name validation failed: 1234
+2024-04-12 20:31:56,417 django_warn  WARNING  Keyword access failed: User: me@here.com attempted to access Keyword ID: 9 Name: history
+2024-04-12 20:32:39,974 django_warn  WARNING  User: Email validation failed: me
+2024-04-12 20:32:39,980 django_warn  WARNING  Keyword: Category validation failed: bad
+2024-04-12 20:32:39,981 django_warn  WARNING  Keyword: Name validation failed: 1234
+2024-04-12 20:32:39,988 django_warn  WARNING  Occupation: Onet Code validation failed: bad code
+2024-04-12 20:32:40,115 django_warn  WARNING  User: Email validation failed: me
+2024-04-12 20:32:40,540 django_warn  WARNING  User Login Failed: me@here.com
+2024-04-12 20:32:41,408 django_warn  WARNING  Keyword: Category validation failed: bad
+2024-04-12 20:32:41,621 django_warn  WARNING  Keyword: Name validation failed: 1234
+2024-04-12 20:32:42,275 django_warn  WARNING  Keyword access failed: User: me@here.com attempted to access Keyword ID: 9 Name: history

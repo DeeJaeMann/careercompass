@@ -538,7 +538,7 @@ class TestOccupationView(TestCase):
         self.assertNotEqual(len(details), 0)
 
 
-class TestDetailsView(TestCase):
+class TestONetViews(TestCase):
     """
     Details view tests
     """
@@ -634,7 +634,6 @@ class TestDetailsView(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        # print(occupations.content)
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("occupation-details",
@@ -643,5 +642,27 @@ class TestDetailsView(TestCase):
         with self.subTest():
             self.assertEqual(response.status_code, 200)
         occupation_pattern = re.compile(
-            rb'"occupation":' + str(occupation.id).encode())
+            rb'"occupation":' + str(occupation.id).encode()
+        )
         self.assertRegex(response.content, occupation_pattern)
+
+    def test_034_access_occupation_knowledge(self):
+        """
+        This test attemtps to access an occupations knowledge by id
+        """
+
+        this_auth_client = self.auth_client
+
+        this_auth_client.get(reverse("get-occupations"))
+
+        occupation = Occupation.objects.all().first()
+
+        response = this_auth_client.get(reverse("get-knowledge",
+                                                args=[occupation.id]))
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 201)
+        knowledge_pattern = re.compile(
+            rb'"occupation":' + str(occupation.id).encode()
+        )
+        self.assertRegex(response.content, knowledge_pattern)

@@ -55,8 +55,6 @@ class KnowledgeInfo(TokenReq):
 
         if knowledge.count() == 0:
             # No record exists, query ONet API
-            print("No Record")
-            # occupation = Occupation.objects.get(id=id)
             occupation = get_object_or_404(Occupation, id=id)
             # onet_code
             this_url = f'mnm/careers/{occupation.onet_code}/knowledge'
@@ -104,13 +102,11 @@ class KnowledgeInfo(TokenReq):
             new_knowledge = KnowledgeSerializer(data=knowledge_data, many=True)
 
             if new_knowledge.is_valid():
-                print(f"Serializer is valid {new_knowledge.data}")
                 new_knowledge.save()
                 info_logger.info(f"Knowledge: User {ccuser} created for occupation ID: {occupation.id} - {new_knowledge.data}")
                 return Response(new_knowledge.data, status=HTTP_201_CREATED)
             return Response(new_knowledge.errors, status=HTTP_400_BAD_REQUEST)
 
-        print("Found records")
         response = KnowledgeSerializer(knowledge, many=True)
 
         return Response(response.data)
