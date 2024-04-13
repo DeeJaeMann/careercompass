@@ -145,12 +145,12 @@ AUTH_USER_MODEL = "user_app.CCUser"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "formatters":{
+    "formatters": {
         "simple": {
-            "format":'%(levelname)s %(message)s',
+            "format": '%(levelname)s %(message)s',
         },
         "verbose": {
-            "format":'%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+            "format": '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
         },
     },
     "handlers": {
@@ -164,25 +164,25 @@ LOGGING = {
             "level": "INFO",
             "class": "logging.FileHandler",
             "filename": f"{BASE_DIR}/log/info.log",
-            "formatter":"verbose",
+            "formatter": "verbose",
         },
         "django_warn": {
             "level": "WARNING",
             "class": "logging.FileHandler",
             "filename": f"{BASE_DIR}/log/warn.log",
-            "formatter":"verbose",
+            "formatter": "verbose",
         },
         "django_error": {
             "level": "ERROR",
             "class": "logging.FileHandler",
             "filename": f"{BASE_DIR}/log/error.log",
-            "formatter":"verbose",
+            "formatter": "verbose",
         },
         "django_crit": {
             "level": "CRITICAL",
             "class": "logging.FileHandler",
             "filename": f"{BASE_DIR}/log/crit.log",
-            "formatter":"verbose",
+            "formatter": "verbose",
         },
     },
     "loggers": {

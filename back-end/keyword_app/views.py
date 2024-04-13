@@ -12,6 +12,7 @@ from lib.logger import info_logger, error_logger, warn_logger
 
 # Create your views here.
 
+
 class CreateKeyword(TokenReq):
     """
     View to create a new keyword
@@ -27,12 +28,15 @@ class CreateKeyword(TokenReq):
 
         if new_keyword.is_valid():
             new_keyword.save()
-            info_logger.info(f"Keyword ID: {new_keyword.data.get('id')} created by User: {this_user.get_username()}")
+            info_logger.info(
+                f"Keyword ID: {new_keyword.data.get('id')} created by User: {this_user.get_username()}")
             return Response(new_keyword.data, status=HTTP_201_CREATED)
-        
-        error_logger.error(f"CreateKeyword: {new_keyword.errors} Value: {data}")
+
+        error_logger.error(
+            f"CreateKeyword: {new_keyword.errors} Value: {data}")
         return Response(new_keyword.errors, status=HTTP_400_BAD_REQUEST)
-    
+
+
 class KeywordInfo(TokenReq):
     """
     View to get keyword field data
@@ -47,20 +51,25 @@ class KeywordInfo(TokenReq):
 
             ser_keyword = KeywordSerializer(this_keyword)
 
-            info_logger.info(f"Keyword accessed: ID: {ser_keyword.data['id']} Name: {ser_keyword.data['name']}")
+            info_logger.info(
+                f"Keyword accessed: ID: {ser_keyword.data['id']} Name: {ser_keyword.data['name']}")
 
             return Response(ser_keyword.data)
-        
-        warn_logger.warning(f"Keyword access failed: User: {this_user} attempted to access Keyword ID: {this_keyword.id} Name: {this_keyword.name}")
+
+        warn_logger.warning(
+            f"Keyword access failed: User: {this_user} attempted to access Keyword ID: {this_keyword.id} Name: {this_keyword.name}")
         return Response(f"Keyword ID: {this_keyword.id} Name: {this_keyword.name} does not belong to user {this_user}", status=HTTP_403_FORBIDDEN)
-    
+
+
 class KeywordAllInfo(TokenReq):
     """
     View to get all user's keywords
     """
+
     def get(self, request):
         this_user = get_object_or_404(CCUser, id=request.user.id)
         keywords = Keyword.objects.filter(user=this_user)
         ser_keywords = KeywordSerializer(keywords, many=True)
-        info_logger.info(f"Keywords accessed (All User: {this_user}): {ser_keywords.data}")
+        info_logger.info(
+            f"Keywords accessed (All User: {this_user}): {ser_keywords.data}")
         return Response(ser_keywords.data)

@@ -634,7 +634,7 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
+        # TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("occupation-details",
@@ -656,7 +656,7 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
+        # TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("get-knowledge",
@@ -678,17 +678,17 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
+        # TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("get-education",
                                                 args=[occupation.id]))
-        
+
         with self.subTest():
             self.assertEqual(response.status_code, 201)
         education_pattern = re.compile(
             rb'"occupation":' + str(occupation.id).encode()
-            )
+        )
         self.assertRegex(response.content, education_pattern)
 
     def test_036_access_occupation_skills(self):
@@ -700,12 +700,12 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this
+        # TODO: Refactor this
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("get-skills",
                                                 args=[occupation.id]))
-        
+
         with self.subTest():
             self.assertEqual(response.status_code, 201)
         skills_pattern = re.compile(
