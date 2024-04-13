@@ -690,3 +690,25 @@ class TestONetViews(TestCase):
             rb'"occupation":' + str(occupation.id).encode()
             )
         self.assertRegex(response.content, education_pattern)
+
+    def test_036_access_occupation_skills(self):
+        """
+        This test attempts to access an occupations skills by id
+        """
+
+        this_auth_client = self.auth_client
+
+        this_auth_client.get(reverse("get-occupations"))
+
+        #TODO: Refactor this
+        occupation = Occupation.objects.all().first()
+
+        response = this_auth_client.get(reverse("get-skills",
+                                                args=[occupation.id]))
+        
+        with self.subTest():
+            self.assertEqual(response.status_code, 201)
+        skills_pattern = re.compile(
+            rb'"occupation":' + str(occupation.id).encode()
+        )
+        self.assertRegex(response.content, skills_pattern)

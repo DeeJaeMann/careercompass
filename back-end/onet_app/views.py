@@ -13,7 +13,9 @@ from .serializers import (
     KnowledgeSerializer, 
     Knowledge,
     EducationSerializer,
-    Education
+    Education,
+    Skills,
+    SkillsSerializer,
 )
 from lib.logger import info_logger, error_logger
 from lib.onet import OnetWebService
@@ -179,4 +181,75 @@ class EducationInfo(TokenReq):
 
         Education.objects.get(occupation=id).delete()
         info_logger.info(f"Education: User: {ccuser} deleted education for occupation id: {id}")
+        return Response(status=HTTP_204_NO_CONTENT)
+    
+class SkillsInfo(TokenReq):
+
+    def get(self, request, id):
+
+        ccuser = get_object_or_404(CCUser, id=request.user.id)
+
+        skills = Skills.objects.filter(occupation=id)
+
+        if skills.count() == 0:
+
+            occupation = get_object_or_404(Occupation, id=id)
+
+            this_url = f'mnm/careers/{occupation.onet_code}/skills'
+
+            response = onet_client.call(this_url)
+
+            skills_data = []
+
+            if 'error' in response:
+                error_logger.error(f"OnetWebService: Resource does not exist: {occupation.onet_code} - {occupation.name}")
+
+                this_data = {
+                    'category':'Error',
+                    'description': {
+                        'element': [
+                            {
+                                'id':'error',
+                                'name':'this record does not exist'
+                            }
+                        ]
+                    },
+                    'occupation':occupation.id
+                }
+                skills_data.append(this_data)
+            else:
+                
+                group = response['group']
+
+                for element in group:
+
+                    category = element['title']['name']
+                    description = {'element':element['element']}
+                    this_data = {
+                        'category':category,
+                        'description':description,
+                        'occupation':occupation.id
+                    }
+                    skills_data.append(this_data)
+
+            ser_new_skills = SkillsSerializer(data=skills_data, many=True)
+
+            if ser_new_skills.is_valid():
+                ser_new_skills.save()
+                info_logger.info(f"Skills: User {ccuser} created for occupation ID: {occupation.id} - {ser_new_skills.data}")
+                return Response(ser_new_skills.data, status=HTTP_201_CREATED)
+            return Response(ser_new_skills.errors, status=HTTP_400_BAD_REQUEST)
+        
+        response = SkillsSerializer(skills, many=True)
+
+        return Response(response.data)
+    
+    def delete(self, request, id):
+        """
+        Deletes all skills records with job id
+        """
+        ccuser = get_object_or_404(CCUser, id=request.user.id)
+
+        Skills.objects.filter(occupation=id).delete()
+        info_logger.info(f"Skills: User: {ccuser} deleted skills for occupation id: {id}")
         return Response(status=HTTP_204_NO_CONTENT)
