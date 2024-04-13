@@ -6,6 +6,7 @@ from onet_app.models import Details, Occupation
 import json
 import re
 
+
 class TestCCUserView(TestCase):
     """
     CCUser View Tests
@@ -17,10 +18,10 @@ class TestCCUserView(TestCase):
     app_con = "application/json"
 
     good_usr_data = {
-        "email":tst_email,
-        "password":tst_pass,
+        "email": tst_email,
+        "password": tst_pass,
     }
-    
+
     def test_003_user_sign_up(self):
         """
         This test will attempt to create a new user given the correct information
@@ -36,7 +37,7 @@ class TestCCUserView(TestCase):
             self.assertEqual(response.status_code, 201)
 
         self.assertRegex(response.data['username'], self.tst_email)
-    
+
     def test_004_user_sign_up_improper_email(self):
         """
         This test will attempt to create a new user given an incorrect email address
@@ -45,9 +46,9 @@ class TestCCUserView(TestCase):
         response = client.post(
             reverse("sign-up"),
             data={
-                "email":"me", 
-                "password":self.tst_pass
-                },
+                "email": "me",
+                "password": self.tst_pass
+            },
             content_type=self.app_con,
         )
         with self.subTest():
@@ -93,9 +94,9 @@ class TestCCUserView(TestCase):
         response = client.post(
             reverse("login"),
             data={
-                "email":self.tst_email, 
-                "password":"incorrect",
-                },
+                "email": self.tst_email,
+                "password": "incorrect",
+            },
             content_type=self.app_con,
         )
 
@@ -123,12 +124,14 @@ class TestCCUserView(TestCase):
             content_type=self.app_con,
         )
         response_body = json.loads(login_response.content)
-        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+        self.auth_client = Client(
+            headers={"Authorization": f"Token {response_body['token']}"})
         response = self.auth_client.post(reverse("logout"))
         with self.subTest():
             tokens = Token.objects.all()
             self.assertEqual(len(tokens), 0)
         self.assertEqual(response.status_code, 204)
+
 
 class TestKeywordView(TestCase):
     """
@@ -140,16 +143,16 @@ class TestKeywordView(TestCase):
     app_con = "application/json"
 
     good_usr_data = {
-        "email":tst_email,
-        "password":tst_pass,
+        "email": tst_email,
+        "password": tst_pass,
     }
 
     tst_category = "interest"
     tst_name = "history"
 
     good_cat_data = {
-        "category":tst_category,
-        "name":tst_name,
+        "category": tst_category,
+        "name": tst_name,
     }
 
     def test_011_create_keyword_without_credentials(self):
@@ -163,7 +166,7 @@ class TestKeywordView(TestCase):
             content_type=self.app_con
         )
         self.assertEqual(response.status_code, 401)
-    
+
     def setUp(self):
         """
         Keywords require a user to be authenticated
@@ -181,7 +184,8 @@ class TestKeywordView(TestCase):
             content_type=self.app_con,
         )
         response_body = json.loads(login_response.content)
-        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+        self.auth_client = Client(
+            headers={"Authorization": f"Token {response_body['token']}"})
 
     def test_012_create_keyword_with_credentials(self):
         """
@@ -191,8 +195,8 @@ class TestKeywordView(TestCase):
             reverse("create-keyword"),
             data=self.good_cat_data,
             content_type=self.app_con,
-            )
-        
+        )
+
         with self.subTest():
             self.assertEqual(response.status_code, 201)
         self.assertRegex(response.content, rb"history")
@@ -206,8 +210,8 @@ class TestKeywordView(TestCase):
         response = this_auth_client.post(
             reverse("create-keyword"),
             data={
-                "category":"bad",
-                "name":self.tst_name
+                "category": "bad",
+                "name": self.tst_name
             },
             content_type=self.app_con
         )
@@ -223,8 +227,8 @@ class TestKeywordView(TestCase):
         response = this_auth_client.post(
             reverse("create-keyword"),
             data={
-                "category":self.tst_category,
-                "name":"1234"
+                "category": self.tst_category,
+                "name": "1234"
             },
             content_type=self.app_con
         )
@@ -310,7 +314,7 @@ class TestKeywordView(TestCase):
         response = this_auth_client.get(
             reverse("get-keyword", args=[self.keyword_two.id])
         )
-        
+
         with self.subTest():
             self.assertEqual(response.status_code, 403)
         # The keyword needs to be converted to a string and encoded to concat to the binary string RegEx pattern
@@ -354,7 +358,8 @@ class TestKeywordView(TestCase):
             self.assertEqual(response.status_code, 200)
         # Compile the variables specified earlier into a bytes pattern
         key_one_pattern = re.compile(rb'"name":"'+self.tst_name.encode()+b'"')
-        key_two_pattern = re.compile(rb'"name":"'+new_keyword.name.encode()+b'"')
+        key_two_pattern = re.compile(
+            rb'"name":"'+new_keyword.name.encode()+b'"')
         self.assertRegex(response.content, key_one_pattern)
         self.assertRegex(response.content, key_two_pattern)
 
@@ -368,6 +373,7 @@ class TestKeywordView(TestCase):
         response = client.get(reverse("user-keywords"))
         self.assertEqual(response.status_code, 401)
 
+
 class TestOccupationView(TestCase):
     """
     Occupation view tests
@@ -378,9 +384,9 @@ class TestOccupationView(TestCase):
     app_con = "application/json"
 
     good_usr_data = {
-        "email":tst_email,
-        "password":tst_pass,
-        }
+        "email": tst_email,
+        "password": tst_pass,
+    }
 
     def setUp(self):
         """
@@ -399,7 +405,8 @@ class TestOccupationView(TestCase):
             content_type=self.app_con,
         )
         response_body = json.loads(login_response.content)
-        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+        self.auth_client = Client(
+            headers={"Authorization": f"Token {response_body['token']}"})
 
     def setup_keywords(self):
         ccuser = CCUser.objects.get(username=self.tst_email)
@@ -462,7 +469,7 @@ class TestOccupationView(TestCase):
 
         response = this_auth_client.get(reverse("get-occupations"))
         self.assertEqual(response.status_code, 201)
-    
+
     def test_024_access_occupations_no_credentials(self):
         """
         This test attempts to access all occupations endpoint without credentials
@@ -530,7 +537,8 @@ class TestOccupationView(TestCase):
 
         self.assertNotEqual(len(details), 0)
 
-class TestDetailsView(TestCase):
+
+class TestONetViews(TestCase):
     """
     Details view tests
     """
@@ -540,10 +548,10 @@ class TestDetailsView(TestCase):
     app_con = "application/json"
 
     good_usr_data = {
-        "email":tst_email,
-        "password":tst_pass,
-        }
-    
+        "email": tst_email,
+        "password": tst_pass,
+    }
+
     def setUp(self):
         """
         Details require:
@@ -564,7 +572,8 @@ class TestDetailsView(TestCase):
             content_type=self.app_con,
         )
         response_body = json.loads(login_response.content)
-        self.auth_client = Client(headers={"Authorization":f"Token {response_body['token']}"})
+        self.auth_client = Client(
+            headers={"Authorization": f"Token {response_body['token']}"})
 
         ccuser = CCUser.objects.get(username=self.tst_email)
 
@@ -625,7 +634,6 @@ class TestDetailsView(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        # print(occupations.content)
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("occupation-details",
@@ -633,5 +641,28 @@ class TestDetailsView(TestCase):
 
         with self.subTest():
             self.assertEqual(response.status_code, 200)
-        occupation_pattern = re.compile(rb'"occupation":' + str(occupation.id).encode())
+        occupation_pattern = re.compile(
+            rb'"occupation":' + str(occupation.id).encode()
+        )
         self.assertRegex(response.content, occupation_pattern)
+
+    def test_034_access_occupation_knowledge(self):
+        """
+        This test attemtps to access an occupations knowledge by id
+        """
+
+        this_auth_client = self.auth_client
+
+        this_auth_client.get(reverse("get-occupations"))
+
+        occupation = Occupation.objects.all().first()
+
+        response = this_auth_client.get(reverse("get-knowledge",
+                                                args=[occupation.id]))
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 201)
+        knowledge_pattern = re.compile(
+            rb'"occupation":' + str(occupation.id).encode()
+        )
+        self.assertRegex(response.content, knowledge_pattern)

@@ -200,7 +200,7 @@ class TestOnetModels(TestCase):
         """
         This test will attempt to create a new details model
         """
-        
+
         new_details = Details.objects.create(
             onet_name=self.onet_name,
             description=self.description,
@@ -218,8 +218,15 @@ class TestOnetModels(TestCase):
         """
 
         new_knowledge = Knowledge.objects.create(
-            category="Test category",
-            description="This is a test",
+            category="Math and Science",
+            description={
+                'element': [
+                    {
+                        'id':'2.C.4.e',
+                        'name':'psychology'
+                    }
+                ]
+            },
             occupation=self.job,
         )
 
@@ -249,12 +256,12 @@ class TestOnetModels(TestCase):
             description={
                 "element": [
                     {
-                        "id":"2.B.1.e",
-                        "name":"teaching people how to do something"
+                        "id": "2.B.1.e",
+                        "name": "teaching people how to do something"
                     },
                     {
-                        "id":"2.B.1.f",
-                        "name":"looking for ways to help people"
+                        "id": "2.B.1.f",
+                        "name": "looking for ways to help people"
                     }
                 ]
             },
