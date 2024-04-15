@@ -52,3 +52,4 @@
 2024-04-13 21:34:45,764 django_warn  WARNING  Keyword: Category validation failed: bad
 2024-04-13 21:34:45,978 django_warn  WARNING  Keyword: Name validation failed: 1234
 2024-04-13 21:34:46,621 django_warn  WARNING  Keyword access failed: User: me@here.com attempted to access Keyword ID: 9 Name: history
+2024-04-13 21:50:14,334 django_warn  WARNING  Keyword access failed: User: you@here.com attempted to access Keyword ID: 1 Name: history
