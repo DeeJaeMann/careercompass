@@ -296,7 +296,7 @@ class TestKeywordView(TestCase):
 
         this_auth_client = self.auth_client
         response = this_auth_client.get(
-            reverse("get-keyword", args=[self.keyword_one.id])
+            reverse("keyword", args=[self.keyword_one.id])
         )
 
         with self.subTest():
@@ -312,7 +312,7 @@ class TestKeywordView(TestCase):
 
         this_auth_client = self.auth_client
         response = this_auth_client.get(
-            reverse("get-keyword", args=[self.keyword_two.id])
+            reverse("keyword", args=[self.keyword_two.id])
         )
 
         with self.subTest():
@@ -330,7 +330,7 @@ class TestKeywordView(TestCase):
 
         client = Client()
         response = client.get(
-            reverse("get-keyword", args=[10])
+            reverse("keyword", args=[10])
         )
         self.assertEqual(response.status_code, 401)
 
@@ -712,3 +712,26 @@ class TestONetViews(TestCase):
             rb'"occupation":' + str(occupation.id).encode()
         )
         self.assertRegex(response.content, skills_pattern)
+
+    def test_037_modify_keyword(self):
+        """
+        This test attempts to modify a keyword by id
+        """
+
+        this_auth_client = self.auth_client
+
+        old_keyword = Keyword.objects.get(name="woodworking")
+
+        data = {
+            'id':old_keyword.id,
+            'name':'cycling'
+        }
+
+        response = this_auth_client.put(reverse("keyword",
+                                                args=[old_keyword.id]),
+                                                data=data,
+                                                content_type=self.app_con)
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 201)
+        self.assertRegex(response.content, rb'"name":"cycling"')
