@@ -296,7 +296,7 @@ class TestKeywordView(TestCase):
 
         this_auth_client = self.auth_client
         response = this_auth_client.get(
-            reverse("get-keyword", args=[self.keyword_one.id])
+            reverse("keyword", args=[self.keyword_one.id])
         )
 
         with self.subTest():
@@ -312,7 +312,7 @@ class TestKeywordView(TestCase):
 
         this_auth_client = self.auth_client
         response = this_auth_client.get(
-            reverse("get-keyword", args=[self.keyword_two.id])
+            reverse("keyword", args=[self.keyword_two.id])
         )
 
         with self.subTest():
@@ -330,7 +330,7 @@ class TestKeywordView(TestCase):
 
         client = Client()
         response = client.get(
-            reverse("get-keyword", args=[10])
+            reverse("keyword", args=[10])
         )
         self.assertEqual(response.status_code, 401)
 
@@ -517,11 +517,11 @@ class TestOccupationView(TestCase):
 
         response = this_auth_client.delete(reverse("get-occupations"))
 
-        occupations = Occupation.objects.all()
+        occupations = Occupation.objects.all().count()
 
         with self.subTest():
             self.assertEqual(response.status_code, 204)
-        self.assertEqual(len(occupations), 0)
+        self.assertEqual(occupations, 0)
 
     def test_029_occupation_populates_details(self):
         """
@@ -533,9 +533,9 @@ class TestOccupationView(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        details = Details.objects.all()
+        details = Details.objects.all().count()
 
-        self.assertNotEqual(len(details), 0)
+        self.assertNotEqual(details, 0)
 
 
 class TestONetViews(TestCase):
@@ -634,7 +634,7 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
+        # TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("occupation-details",
@@ -656,7 +656,7 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
+        # TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("get-knowledge",
@@ -678,17 +678,17 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
+        # TODO: Refactor this to ensure we're getting the list of occupations that belong to the logged in user
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("get-education",
                                                 args=[occupation.id]))
-        
+
         with self.subTest():
             self.assertEqual(response.status_code, 201)
         education_pattern = re.compile(
             rb'"occupation":' + str(occupation.id).encode()
-            )
+        )
         self.assertRegex(response.content, education_pattern)
 
     def test_036_access_occupation_skills(self):
@@ -700,15 +700,38 @@ class TestONetViews(TestCase):
 
         this_auth_client.get(reverse("get-occupations"))
 
-        #TODO: Refactor this
+        # TODO: Refactor this
         occupation = Occupation.objects.all().first()
 
         response = this_auth_client.get(reverse("get-skills",
                                                 args=[occupation.id]))
-        
+
         with self.subTest():
             self.assertEqual(response.status_code, 201)
         skills_pattern = re.compile(
             rb'"occupation":' + str(occupation.id).encode()
         )
         self.assertRegex(response.content, skills_pattern)
+
+    def test_037_modify_keyword(self):
+        """
+        This test attempts to modify a keyword by id
+        """
+
+        this_auth_client = self.auth_client
+
+        old_keyword = Keyword.objects.get(name="woodworking")
+
+        data = {
+            'id':old_keyword.id,
+            'name':'cycling'
+        }
+
+        response = this_auth_client.put(reverse("keyword",
+                                                args=[old_keyword.id]),
+                                                data=data,
+                                                content_type=self.app_con)
+
+        with self.subTest():
+            self.assertEqual(response.status_code, 201)
+        self.assertRegex(response.content, rb'"name":"cycling"')

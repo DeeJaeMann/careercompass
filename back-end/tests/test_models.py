@@ -222,8 +222,8 @@ class TestOnetModels(TestCase):
             description={
                 'element': [
                     {
-                        'id':'2.C.4.e',
-                        'name':'psychology'
+                        'id': '2.C.4.e',
+                        'name': 'psychology'
                     }
                 ]
             },
@@ -241,7 +241,7 @@ class TestOnetModels(TestCase):
         new_education = Education.objects.create(
             description={
                 "education_usually_needed": {
-                    "category" : [
+                    "category": [
                         "certificate after high school",
                         "high school diploma/GED"
                     ]

@@ -15,6 +15,7 @@ from lib.logger import info_logger, error_logger, warn_logger
 
 # Create your views here.
 
+
 def create_user(request):
     """
     Attempts to create a user model with the data provided
@@ -32,18 +33,21 @@ def create_user(request):
         return [new_user, token]
     except ValidationError as error:
         return error
-    
+
+
 class TokenReq(APIView):
     """
     Class to inherit when a token is required
     """
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
-    
+
+
 class SignUp(APIView):
     """
     View to create a new user
     """
+
     def post(self, request):
         credentials = create_user(request)
 
@@ -57,12 +61,13 @@ class SignUp(APIView):
             info_logger.info(f"User: {new_user.username} created.")
 
             return Response(
-                {"username":new_user.username, "token":token.key}, 
+                {"username": new_user.username, "token": token.key},
                 status=HTTP_201_CREATED
-                )
+            )
         error_logger.error(f"SignUp: {credentials.message_dict}")
         return Response(credentials.message_dict, status=HTTP_400_BAD_REQUEST)
-    
+
+
 class LogIn(APIView):
     """
     View to login user
@@ -74,17 +79,19 @@ class LogIn(APIView):
 
         data['username'] = request.data.get("email")
 
-        this_user = authenticate(username=data.get("username"), password=data.get("password"))
+        this_user = authenticate(username=data.get(
+            "username"), password=data.get("password"))
 
         if this_user:
 
             token, _ = Token.objects.get_or_create(user=this_user)
             login(request, this_user)
             info_logger.info(f"User: {this_user.username} login.")
-            return Response({"username":this_user.username, "token":token.key})
- 
+            return Response({"username": this_user.username, "token": token.key})
+
         warn_logger.warning(f"User Login Failed: {data['username']}")
         return Response("Username or password incorrect", status=HTTP_400_BAD_REQUEST)
+
 
 class LogOut(TokenReq):
     """
@@ -93,6 +100,7 @@ class LogOut(TokenReq):
 
     def post(self, request):
         request.user.auth_token.delete()
-        info_logger.info(f"User: {request.data.get('email')} logout.  Token deleted.")
+        info_logger.info(
+            f"User: {request.data.get('email')} logout.  Token deleted.")
         logout(request)
         return Response(status=HTTP_204_NO_CONTENT)
