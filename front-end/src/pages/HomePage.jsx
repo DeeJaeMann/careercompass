@@ -7,7 +7,7 @@ const HomePage = () => {
             <div>
                 <h2>Welcome to Career Compass!</h2>
                 <p>A great description will go here!</p>
-                <div>
+                <div className="d-flex justify-center">
                     <p>
                         <a href="https://services.onetcenter.org/" title="This site incorporates information from O*NET Web Services. Click to learn more."><img src="https://www.onetcenter.org/image/link/onet-in-it.svg" alt="O*NET in-it" /></a>
                     </p>
