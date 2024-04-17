@@ -6,35 +6,50 @@ import {
     MDBNavbarBrand,
     MDBNavbarLink,
     MDBBtn,
+    MDBBadge,
 } from 'mdb-react-ui-kit';
 import ccLogo from "../assets/logo2.png"
 
-const Navbar = () => {
+const Navbar = ({user, setUser}) => {
 
     return (
         <>
             <MDBNavbar expand='lg' className='rounded-lg bg-slate-300 mb-5'>
                 <MDBContainer fluid>
-                    <Link to="#">
-                        <MDBNavbarBrand>
-                            <img
-                                src={ccLogo}
-                                alt='Career Compass Logo'
-                                loading='lazy'
-                                className='h-20 rounded-full border dark:border-neutral-700 dark:bg-neutral-800'
-                                />
-                            Career Compass
-                        </MDBNavbarBrand>
-                    </Link>
-                </MDBContainer>
-                <MDBContainer className="justify-evenly" fluid>
-                    <MDBNavbarLink>Interests and Hobbies</MDBNavbarLink>
-                    <MDBNavbarLink>Occupations</MDBNavbarLink>
+                    <MDBNavbarBrand tag={Link} to="/">
+                        <img
+                            src={ccLogo}
+                            alt='Career Compass Logo'
+                            loading='lazy'
+                            className='h-20 rounded-full border dark:border-neutral-700 dark:bg-neutral-800'
+                            />
+                        Career Compass
+                    </MDBNavbarBrand>
                 </MDBContainer>
                 <MDBContainer className="d-flex justify-end w-auto mr-5" fluid>
-                    <MDBBtn className="bg-blue-700 mr-3">Login</MDBBtn>
-                    <MDBBtn className="bg-blue-700">SignUp</MDBBtn>
+                    {!user ? (
+                        <>
+                            <Link to="signup/">
+                                <MDBBtn className="bg-blue-900 mr-3">Login</MDBBtn>
+                            </Link>
+                            <Link to="signup/">
+                                <MDBBtn className="bg-blue-900">SignUp</MDBBtn>
+                            </Link>
+                        </>
+                        ) : (
+                        <>
+                            <Link to="signup/">
+                                <MDBBtn className="bg-red-900">Logout</MDBBtn>
+                            </Link>
+                        </>
+                    )}
                 </MDBContainer>
+                <MDBContainer className="justify-start mt-3" fluid>
+                    <MDBNavbarLink tag={Link} to="/signup">Interests and Hobbies</MDBNavbarLink>
+                    <MDBNavbarLink tag={Link} to="/signup">Occupations</MDBNavbarLink>
+                    <MDBBadge color="info" className="ms-2">{user}</MDBBadge>
+                </MDBContainer>
+
             </MDBNavbar>
         </>
     )

@@ -772,3 +772,14 @@
 2024-04-16 19:40:21,800 django_info  INFO     User: me@here.com login.
 2024-04-16 19:40:21,809 django_info  INFO     Keyword: User: me@here.com updated ID: 5 - {'id': 5, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-16T19:40:21.808319Z', 'user': 1}
 2024-04-16 19:40:21,809 django_info  INFO     Keyword: Delete old occupations for me@here.com - []
+2024-04-17 01:01:53,372 django_info  INFO     User: test1@test.com created.
+2024-04-17 01:10:01,620 django_info  INFO     User: test2@test.com created.
+2024-04-17 01:10:01,781 django_info  INFO     User: test2@test.com login.
+2024-04-17 01:12:02,818 django_info  INFO     User: test3@here.com created.
+2024-04-17 01:12:02,952 django_info  INFO     User: test3@here.com login.
+2024-04-17 01:23:55,414 django_info  INFO     User: test4@test.com created.
+2024-04-17 01:23:55,531 django_info  INFO     User: test4@test.com login.
+2024-04-17 01:32:59,678 django_info  INFO     User: test4@here.com created.
+2024-04-17 01:32:59,803 django_info  INFO     User: test4@here.com login.
+2024-04-17 01:38:48,536 django_info  INFO     User: test5@here.com created.
+2024-04-17 01:38:48,679 django_info  INFO     User: test5@here.com login.
