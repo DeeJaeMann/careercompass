@@ -48,7 +48,7 @@ const Navbar = ({user, setUser}) => {
                 <MDBContainer className="justify-start mt-3" fluid>
                     {user ? (
                         <>
-                            <MDBNavbarLink tag={Link} to="/signup">Interests and Hobbies</MDBNavbarLink>
+                            <MDBNavbarLink tag={Link} to="/keywords">Interests and Hobbies</MDBNavbarLink>
                             <MDBNavbarLink tag={Link} to="/signup">Occupations</MDBNavbarLink>
                             <MDBBadge color="info" className="ms-2">{user}</MDBBadge>
                         </>

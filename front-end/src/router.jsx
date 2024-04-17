@@ -3,6 +3,7 @@ import App from "./App.jsx"
 import HomePage from "./pages/HomePage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
+import KeywordsPage from "./pages/KeywordsPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
                 path: "login/",
                 element: <LoginPage />,
             },
+            {
+                path: "keywords/",
+                element: <KeywordsPage />,
+            }
         ],
     },
 ]);

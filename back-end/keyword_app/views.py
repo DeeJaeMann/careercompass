@@ -84,6 +84,7 @@ class KeywordInfo(TokenReq):
             info_logger.info(f"Keyword: Delete old occupations for {ccuser} - {[(job.id, job.name) for job in old_occupations]}")
             old_occupations.delete()
             return Response(update_keyword.data, status=HTTP_201_CREATED)
+        error_logger.error(f"Keyword: User {ccuser} failed to update {id} - {update_keyword.errors}")
         return Response(update_keyword.errors, status=HTTP_400_BAD_REQUEST)
 
 
