@@ -12,6 +12,8 @@ const LoginPage = () => {
         event.preventDefault();
 
         setUser(await userLogin(emailInput, passwordInput));
+        setEmailInput("")
+        setPasswordInput("")
     }
 
     return (
@@ -19,9 +21,9 @@ const LoginPage = () => {
             <h2>Login Page</h2>
             <form onSubmit={handleLogin}>
                 <span>E-Mail Address: </span>
-                <input className="rounded-md border-slate-900 border" type="email" name="email" placeholder="Enter Email" onChange={(event) => setEmailInput(event.target.value)} />
+                <input className="rounded-md border-slate-900 border" type="email" name="email" placeholder="Enter Email" value={emailInput} onChange={(event) => setEmailInput(event.target.value)} />
                 <span className="ml-2">Password: </span>
-                <input className="rounded-md border-slate-900 border" type="password" name="password" placeholder="Password" onChange={(event) => setPasswordInput(event.target.value)} />
+                <input className="rounded-md border-slate-900 border" type="password" name="password" placeholder="Password" value={passwordInput} onChange={(event) => setPasswordInput(event.target.value)} />
                 <MDBBtn className="bg-blue-900 ml-2">Submit</MDBBtn>
             </form>
         </>
