@@ -13,11 +13,11 @@ export const signupUser = async(email, password) => {
 
         if (response.status === 201) {
             console.log(`Connections: User ${email} signed up, response: ${response.data}`);
-            const { user, token } = response.data;
+            const { username, token } = response.data;
             localStorage.setItem("token", token);
             ccAPI.defaults.headers.common["Authorization"] = `Token ${token}`;
             userLogin(email, password);
-            return user
+            return username
         }
     }
     catch (error) {
@@ -29,16 +29,24 @@ export const signupUser = async(email, password) => {
 }
 
 export const userLogin = async (email, password) => {
-    const response = await ccAPI.post("user/login/", {
-        email: email,
-        password: password
-    });
-    if (response.status === 200) {
-        const { user, token } = response.data;
-        localStorage.setItem("token", token);
-        ccAPI.defaults.headers.common["Authorization"] = `Token ${token}`;
-        return user;
+
+    try {
+        const response = await ccAPI.post("user/login/", {
+            email: email,
+            password: password
+        });
+        if (response.status === 200) {
+            const { username, token } = response.data;
+            console.log(response.data)
+            localStorage.setItem("token", token);
+            ccAPI.defaults.headers.common["Authorization"] = `Token ${token}`;
+            console.log(`${username} logged in token ${token}`)
+            return username;
+        }
     }
-    alert(response.data);
-    return null;
+    catch (error) {
+        console.log(error)
+        alert(`${error.response.data}`);
+        return null;
+    }
 }
