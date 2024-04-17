@@ -49,7 +49,7 @@ const Navbar = ({user, setUser}) => {
                     {user ? (
                         <>
                             <MDBNavbarLink tag={Link} to="/keywords">Interests and Hobbies</MDBNavbarLink>
-                            <MDBNavbarLink tag={Link} to="/signup">Occupations</MDBNavbarLink>
+                            <MDBNavbarLink tag={Link} to="/occupations">Occupations</MDBNavbarLink>
                             <MDBBadge color="info" className="ms-2">{user}</MDBBadge>
                         </>
                     ) : (

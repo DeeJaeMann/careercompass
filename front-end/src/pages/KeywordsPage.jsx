@@ -14,7 +14,7 @@ const KeywordsPage = () => {
     const { user } = useOutletContext();
 
     useEffect(() => {
-        getKeywords().then(response=> {
+        getKeywords().then(response => {
             // Sort the response by category
             response = response.sort((a, b) => {
                 const catA = a.category.toUpperCase();
@@ -101,7 +101,6 @@ const KeywordsPage = () => {
             <p>{user && `${user}`}</p>
                 {keywords.length < 6 ? (
                     <>
-                        <p>No Keywords</p>
                         {displayCreateFields()}
                     </>
                 ) : (
