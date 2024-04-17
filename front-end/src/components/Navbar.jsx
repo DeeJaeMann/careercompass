@@ -9,6 +9,7 @@ import {
     MDBBadge,
 } from 'mdb-react-ui-kit';
 import ccLogo from "../assets/logo2.png"
+import { userLogout } from "../lib/connections";
 
 const Navbar = ({user, setUser}) => {
 
@@ -38,16 +39,22 @@ const Navbar = ({user, setUser}) => {
                         </>
                         ) : (
                         <>
-                            <Link to="signup/">
-                                <MDBBtn className="bg-red-900">Logout</MDBBtn>
+                            <Link to="login/">
+                                <MDBBtn className="bg-red-900" onClick={async () => setUser(await userLogout())}>Logout</MDBBtn>
                             </Link>
                         </>
                     )}
                 </MDBContainer>
                 <MDBContainer className="justify-start mt-3" fluid>
-                    <MDBNavbarLink tag={Link} to="/signup">Interests and Hobbies</MDBNavbarLink>
-                    <MDBNavbarLink tag={Link} to="/signup">Occupations</MDBNavbarLink>
-                    <MDBBadge color="info" className="ms-2">{user}</MDBBadge>
+                    {user ? (
+                        <>
+                            <MDBNavbarLink tag={Link} to="/signup">Interests and Hobbies</MDBNavbarLink>
+                            <MDBNavbarLink tag={Link} to="/signup">Occupations</MDBNavbarLink>
+                            <MDBBadge color="info" className="ms-2">{user}</MDBBadge>
+                        </>
+                    ) : (
+                        <></>
+                    )}
                 </MDBContainer>
 
             </MDBNavbar>

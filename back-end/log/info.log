@@ -787,3 +787,17 @@
 2024-04-17 01:59:38,279 django_info  INFO     User: test3@here.com login.
 2024-04-17 02:00:18,394 django_info  INFO     User: test3@here.com login.
 2024-04-17 02:00:56,648 django_info  INFO     User: test3@here.com login.
+2024-04-17 02:11:24,491 django_info  INFO     User: test1@here.com created.
+2024-04-17 02:11:24,619 django_info  INFO     User: test1@here.com login.
+2024-04-17 02:11:33,043 django_info  INFO     User: None logout.  Token deleted.
+2024-04-17 02:11:58,644 django_info  INFO     User: test1@here.com login.
+2024-04-17 02:12:08,889 django_info  INFO     User: None logout.  Token deleted.
+2024-04-17 02:12:53,663 django_info  INFO     User: me@here.com login.
+2024-04-17 02:13:12,394 django_info  INFO     User: None logout.  Token deleted.
+2024-04-17 02:14:23,906 django_info  INFO     User: me@here.com login.
+2024-04-17 02:16:45,614 django_info  INFO     User: test1@here.com login.
+2024-04-17 02:18:34,801 django_info  INFO     User: None logout.  Token deleted.
+2024-04-17 02:18:56,818 django_info  INFO     User: test1@test.com login.
+2024-04-17 02:19:11,560 django_info  INFO     User: None logout.  Token deleted.
+2024-04-17 02:23:34,785 django_info  INFO     User: test1@test.com login.
+2024-04-17 02:23:44,861 django_info  INFO     User: None logout.  Token deleted.

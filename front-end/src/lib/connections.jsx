@@ -50,3 +50,20 @@ export const userLogin = async (email, password) => {
         return null;
     }
 }
+
+export const userLogout = async () => {
+    try {
+        const response = await ccAPI.post("user/logout/");
+
+        if (response.status === 204) {
+            localStorage.removeItem("token");
+            delete ccAPI.defaults.headers.common["Authorization"];
+            return null;
+        }
+        alert("Logout failed!");
+    }
+    catch (error) {
+        console.log(error)
+        alert(`${error.response.data}`)
+    }
+}
