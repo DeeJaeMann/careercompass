@@ -29,7 +29,7 @@ const Navbar = ({user, setUser}) => {
                 <MDBContainer className="d-flex justify-end w-auto mr-5" fluid>
                     {!user ? (
                         <>
-                            <Link to="signup/">
+                            <Link to="login/">
                                 <MDBBtn className="bg-blue-900 mr-3">Login</MDBBtn>
                             </Link>
                             <Link to="signup/">
