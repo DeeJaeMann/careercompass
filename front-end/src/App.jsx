@@ -7,10 +7,12 @@ import { Tooltip, initTWE } from "tw-elements";
 
 const App = () => {
 
+  const [ user, setUser] = useState("")
+
   return (
     <>
-      <Navbar />
-      <Outlet />
+      <Navbar user = {user} setUser = {setUser} />
+      <Outlet context = {{user, setUser}} />
       <Footer />
     </>
   )
