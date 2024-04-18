@@ -64,3 +64,24 @@ export const getKnowledge = async(id) => {
         return null
     }
 }
+
+export const getEducation = async(id) => {
+    try {
+        const response = await ccAPI.get(`details/education/${id}/`)
+        console.log("getEducation")
+        console.log(response.data)
+        console.log(response.data.description)
+        // console.log(response.data.description.education_usually_needed)
+        return response.data
+    }
+    catch (error) {
+        if(error.response.status === 404) {
+            console.log(`getEducation catch ${error} ID: ${id}`)
+            alert(`Error ${error}`)
+            return null
+        }
+        console.log(`getEducation error: ${Object.keys(error.response.data).map((err) => `${err} - ${error.response.data[err]}`)}`)
+        alert(`Error: ${Object.keys(error.response.data).map((err) => `${err} - ${error.response.data[err]}`)}`)
+        return null
+    }
+}
