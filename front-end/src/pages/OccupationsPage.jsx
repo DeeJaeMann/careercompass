@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import { getOccupations, getDetails } from "../lib/occupations";
 
 const OccupationsPage = () => {
-    const { user } = useOutletContext();
-    const [ occupations, setOccupations ] = useState([])
-    const [ thisDetail, setThisDetail ] = useState([])
+    const { occupations, setOccupations } = useOutletContext();
 
     useEffect(() => {
         getOccupations().then(response => {
@@ -15,6 +13,7 @@ const OccupationsPage = () => {
                     const nameB = b.name.toUpperCase();
                     return nameA.localeCompare(nameB);
                 });
+                //TODO: Figure this out: none of these work
                 // for(let job of response){
                 //     getDetails(job.id).then(thisResponse => setThisDetail([...thisDetail, thisResponse]))
                 //     console.log(`Job: ${job.id}`)
@@ -44,7 +43,7 @@ const OccupationsPage = () => {
             <h2>Here is what I found for you:</h2>
             <ol>
                 {occupations.map((job, index) =>
-                <li key={index}>{job.name}</li>
+                <li key={index}><Link to={`/details/${job.id}`}>{job.name}</Link></li>
                 )}
             </ol>
         </>
