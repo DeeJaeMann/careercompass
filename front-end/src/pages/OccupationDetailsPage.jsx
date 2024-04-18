@@ -1,26 +1,29 @@
 import { useState, useEffect } from "react";
 import { useParams, useOutletContext } from "react-router-dom";
-import { getDetails } from "../lib/occupations";
+import { 
+    getDetails,
+    getKnowledge,
+} from "../lib/occupations";
 
 const OccupationDetailsPage = () => {
     const [ thisJob, setThisJob ] = useState({})
     const [ details, setDetails ] = useState({})
+    const [ knowledge, setKnowledge ] = useState([])
     const { occupations } = useOutletContext();
 
     const { id } = useParams();
 
     useEffect(() => {
         getDetails(id).then(response => {
-            if(response) {
-                console.log(`useEffect getDetails ${Object.keys(response)}`)
+            if(response) setDetails(response);
 
-                setDetails(response);
+        }).catch((error) => alert(error))
+        getKnowledge(id).then(response => {
+            if(response) setKnowledge(response)
 
-            }
-
-        }).catch((error) => {
-            alert(error)
-        })
+        }).catch((error) => alert(error))
+        console.log(knowledge)
+        console.log(Object.keys(knowledge))
 
         const job = occupations.filter((job) => job.id === Number(id))[0] 
 
@@ -47,6 +50,16 @@ const OccupationDetailsPage = () => {
                 ) : (
                 details.tasks.task.map((job, index) => <li key={index}>{job}</li>)
             )}
+            </ol>
+            <span className="text-lg">Knowledge:</span>
+            <ol>
+                {!knowledge ? (
+                    <></>
+                ):(
+                    <>
+                    {knowledge.map((know, index) => <li key={index}>{know.category}</li>)}
+                    </>
+                )}
             </ol>
         </>
     )

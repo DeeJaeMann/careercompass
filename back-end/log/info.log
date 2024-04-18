@@ -3276,3 +3276,71 @@
 2024-04-18 01:46:57,797 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
 2024-04-18 01:47:01,997 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
 2024-04-18 01:47:06,801 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:49:17,312 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:50:13,900 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:50:15,515 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:52:24,976 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:52:36,874 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:52:43,176 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:52:45,306 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:52:49,811 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:00,772 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:02,855 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:08,293 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:14,573 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:15,943 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:19,633 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:26,520 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:42,414 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:53:53,420 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:54:01,301 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:59:45,832 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:59:48,348 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 01:59:49,982 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:00:04,217 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:00:39,105 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:02:55,273 django_info  INFO     User: me@here.com login.
+2024-04-18 02:04:36,144 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 4, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-16T19:09:07.123368Z', 'user': 1}, {'id': 5, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-16T19:09:43.123714Z', 'user': 1}, {'id': 6, 'category': 'interest', 'name': 'logic', 'date_added': '2024-04-16T19:10:34.135992Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-17T16:34:42.446601Z', 'user': 1}, {'id': 3, 'category': 'hobby', 'name': 'reading', 'date_added': '2024-04-17T17:06:53.065537Z', 'user': 1}, {'id': 1, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-17T18:22:37.193475Z', 'user': 1}]
+2024-04-18 02:04:38,772 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:04:39,310 django_info  INFO     Knowledge: User me@here.com created for occupation ID: 9 - [{'id': 1, 'category': 'Engineering and Technology', 'description': {'element': [{'id': '2.C.3.e', 'name': 'mechanical'}, {'id': '2.C.3.b', 'name': 'product and service development'}]}, 'occupation': 9}, {'id': 2, 'category': 'Business', 'description': {'element': [{'id': '2.C.1.e', 'name': 'customer service'}, {'id': '2.C.1.d', 'name': 'sales and marketing'}]}, 'occupation': 9}, {'id': 3, 'category': 'Arts and Humanities', 'description': {'element': [{'id': '2.C.7.a', 'name': 'English language'}]}, 'occupation': 9}, {'id': 4, 'category': 'Manufactured or Agricultural Goods', 'description': {'element': [{'id': '2.C.2.a', 'name': 'manufacture and distribution of products'}]}, 'occupation': 9}]
+2024-04-18 02:06:07,287 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:06:09,480 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:06:10,596 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:07:31,696 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:07:35,781 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:07:43,613 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:07:56,064 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:08:37,844 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:08:46,712 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:08:49,664 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:08:52,911 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:09:04,729 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:09:50,723 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:10:33,065 django_info  INFO     User: me@here.com login.
+2024-04-18 02:10:35,202 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 4, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-16T19:09:07.123368Z', 'user': 1}, {'id': 5, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-16T19:09:43.123714Z', 'user': 1}, {'id': 6, 'category': 'interest', 'name': 'logic', 'date_added': '2024-04-16T19:10:34.135992Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-17T16:34:42.446601Z', 'user': 1}, {'id': 3, 'category': 'hobby', 'name': 'reading', 'date_added': '2024-04-17T17:06:53.065537Z', 'user': 1}, {'id': 1, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-17T18:22:37.193475Z', 'user': 1}]
+2024-04-18 02:11:16,996 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:12:27,629 django_info  INFO     User: me@here.com login.
+2024-04-18 02:12:29,734 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 4, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-16T19:09:07.123368Z', 'user': 1}, {'id': 5, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-16T19:09:43.123714Z', 'user': 1}, {'id': 6, 'category': 'interest', 'name': 'logic', 'date_added': '2024-04-16T19:10:34.135992Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-17T16:34:42.446601Z', 'user': 1}, {'id': 3, 'category': 'hobby', 'name': 'reading', 'date_added': '2024-04-17T17:06:53.065537Z', 'user': 1}, {'id': 1, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-17T18:22:37.193475Z', 'user': 1}]
+2024-04-18 02:12:30,933 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:12:47,670 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 4, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-16T19:09:07.123368Z', 'user': 1}, {'id': 5, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-16T19:09:43.123714Z', 'user': 1}, {'id': 6, 'category': 'interest', 'name': 'logic', 'date_added': '2024-04-16T19:10:34.135992Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-17T16:34:42.446601Z', 'user': 1}, {'id': 3, 'category': 'hobby', 'name': 'reading', 'date_added': '2024-04-17T17:06:53.065537Z', 'user': 1}, {'id': 1, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-17T18:22:37.193475Z', 'user': 1}]
+2024-04-18 02:12:49,749 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:13:18,144 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:13:45,183 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:14:23,182 django_info  INFO     User: me@here.com login.
+2024-04-18 02:14:25,816 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 4, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-16T19:09:07.123368Z', 'user': 1}, {'id': 5, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-16T19:09:43.123714Z', 'user': 1}, {'id': 6, 'category': 'interest', 'name': 'logic', 'date_added': '2024-04-16T19:10:34.135992Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-17T16:34:42.446601Z', 'user': 1}, {'id': 3, 'category': 'hobby', 'name': 'reading', 'date_added': '2024-04-17T17:06:53.065537Z', 'user': 1}, {'id': 1, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-17T18:22:37.193475Z', 'user': 1}]
+2024-04-18 02:17:42,209 django_info  INFO     User: me@here.com login.
+2024-04-18 02:17:58,635 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 4, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-16T19:09:07.123368Z', 'user': 1}, {'id': 5, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-16T19:09:43.123714Z', 'user': 1}, {'id': 6, 'category': 'interest', 'name': 'logic', 'date_added': '2024-04-16T19:10:34.135992Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-17T16:34:42.446601Z', 'user': 1}, {'id': 3, 'category': 'hobby', 'name': 'reading', 'date_added': '2024-04-17T17:06:53.065537Z', 'user': 1}, {'id': 1, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-17T18:22:37.193475Z', 'user': 1}]
+2024-04-18 02:18:01,180 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:18:36,368 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:18:47,694 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:18:58,960 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:19:23,809 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:20:06,702 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:20:08,342 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:20:12,207 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:20:13,346 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:20:17,238 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:21:31,934 django_info  INFO     User: me@here.com login.
+2024-04-18 02:21:36,278 django_info  INFO     Keywords accessed (All User: me@here.com): [{'id': 4, 'category': 'interest', 'name': 'music', 'date_added': '2024-04-16T19:09:07.123368Z', 'user': 1}, {'id': 5, 'category': 'interest', 'name': 'history', 'date_added': '2024-04-16T19:09:43.123714Z', 'user': 1}, {'id': 6, 'category': 'interest', 'name': 'logic', 'date_added': '2024-04-16T19:10:34.135992Z', 'user': 1}, {'id': 2, 'category': 'hobby', 'name': 'swimming', 'date_added': '2024-04-17T16:34:42.446601Z', 'user': 1}, {'id': 3, 'category': 'hobby', 'name': 'reading', 'date_added': '2024-04-17T17:06:53.065537Z', 'user': 1}, {'id': 1, 'category': 'hobby', 'name': 'cycling', 'date_added': '2024-04-17T18:22:37.193475Z', 'user': 1}]
+2024-04-18 02:21:37,939 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
+2024-04-18 02:22:32,217 django_info  INFO     Details: User me@here.com accessed Detail ID: 9 - Occupation ID: 9 - Bicycle Repairers
