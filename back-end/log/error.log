@@ -219,3 +219,5 @@
 2024-04-18 16:27:21,319 django_error ERROR    OnetWebService: Resource does not exist: 11-9013.02 - Aquacultural Manager
 2024-04-18 16:34:51,695 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician or Singer
 2024-04-18 16:34:51,706 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician or Singer
+2024-04-19 02:17:00,347 django_error ERROR    OnetWebService: Resource does not exist: 25-4021.00 - Librarian
+2024-04-19 02:17:00,349 django_error ERROR    OnetWebService: Resource does not exist: 25-4021.00 - Librarian
