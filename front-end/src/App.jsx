@@ -12,6 +12,7 @@ import { Tooltip, initTWE } from "tw-elements";
 const App = () => {
 
   const [ user, setUser] = useState("")
+  const [ occupations, setOccupations ] = useState([])
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ const App = () => {
   return (
     <>
       <Navbar user = {user} setUser = {setUser} />
-      <Outlet context = {{user, setUser}} />
+      <Outlet context = {{user, setUser, occupations, setOccupations}} />
       <Footer />
     </>
   )

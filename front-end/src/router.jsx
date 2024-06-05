@@ -5,6 +5,7 @@ import SignupPage from "./pages/SignupPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import KeywordsPage from "./pages/KeywordsPage.jsx";
 import OccupationsPage from "./pages/OccupationsPage.jsx";
+import OccupationDetailsPage from "./pages/OccupationDetailsPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "occupations/",
                 element: <OccupationsPage />,
+            },
+            {
+                path: "details/:id",
+                element: <OccupationDetailsPage />,
             },
         ],
     },
