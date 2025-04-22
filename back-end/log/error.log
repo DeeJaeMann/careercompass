@@ -221,3 +221,5 @@
 2024-04-18 16:34:51,706 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician or Singer
 2024-04-19 02:17:00,347 django_error ERROR    OnetWebService: Resource does not exist: 25-4021.00 - Librarian
 2024-04-19 02:17:00,349 django_error ERROR    OnetWebService: Resource does not exist: 25-4021.00 - Librarian
+2024-06-06 15:40:58,324 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
+2024-06-06 15:40:58,325 django_error ERROR    OnetWebService: Resource does not exist: 27-2042.02 - Musician
